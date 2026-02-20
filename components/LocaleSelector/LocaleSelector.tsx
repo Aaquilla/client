@@ -1,6 +1,5 @@
 "use client";
 
-import clsx from "clsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useState } from "react";
@@ -30,7 +29,7 @@ const LocaleSelector = () => {
 					<ChevronDown size={20} strokeWidth={1} absoluteStrokeWidth />
 				)}
 			</button>
-			<Menu className={clsx(active && "active")}>
+			<Menu $active={active}>
 				{locales.map((l) => (
 					<li key={l}>
 						<MenuButton onClick={() => onChange(l)}>{localesDisplay[l][1]}</MenuButton>

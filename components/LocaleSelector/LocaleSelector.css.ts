@@ -15,7 +15,7 @@ export const Menu = styled.ul<{ $active?: boolean }>`
 	right: 0;
 	top: calc(100% + 10px);
 
-	display: none;
+	display: ${(props) => (props.$active ? "flex" : "none")};
 	flex-direction: column;
 
 	background: #ffffff;
@@ -23,11 +23,9 @@ export const Menu = styled.ul<{ $active?: boolean }>`
 	border-radius: 10px;
 	overflow: hidden;
 
-	&.active {
-		display: flex;
-	}
-
 	button {
+		width: 100%;
+
 		border: none;
 		border-radius: 0;
 		padding: 10px;

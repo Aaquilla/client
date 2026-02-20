@@ -4,13 +4,23 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   width: 100%;
+  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  
   padding: 15px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  input, button {
+    width: 100%;
+    height: 100%;
+  }
+  button {
+    width: max-content;
+  }
 `;
 
-export const Navigation = styled.nav`
+export const Navigation = styled.div`
   display: flex;
   gap: 30px;
 `;
@@ -22,8 +32,6 @@ export const Logo = styled.div`
 `;
 
 export const Catalog = styled.button`
-  width: max-content;
-
   display: flex;
   align-items: center;
   gap: 10px;

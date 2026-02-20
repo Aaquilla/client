@@ -2,7 +2,7 @@
 
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 	* {
 		margin: 0;
 		padding: 0;
@@ -11,19 +11,9 @@ export default createGlobalStyle`
 	body {
 		width: 100dvw;
 		height: 100dvh;
-		
-		display: grid;
-		grid-template-rows: auto 1fr;
-	}
-	img: {
-		width: 100%;
-		height: 100%;
 	}
 
 	input,button {
-		width: 100%;
-		height: 100%;
-
 		border-radius: 10px;
 		background: none;
 		outline: none;
@@ -47,3 +37,5 @@ export default createGlobalStyle`
 		list-style: none;
 	}
 `;
+
+export default GlobalStyle;
