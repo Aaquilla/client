@@ -4,12 +4,20 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   width: 100%;
-  
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr auto;
   
   padding: 15px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+`;
+
+export const Bar = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
   input, button {
     width: 100%;
@@ -20,9 +28,15 @@ export const Content = styled.div`
   }
 `;
 
-export const Navigation = styled.div`
+export const Left = styled.div`
   display: flex;
   gap: 30px;
+
+  & button {
+    background: ${({ theme }) => theme.colors.primary};
+    color: #ffffff;
+    border: none;
+  }
 `;
 
 export const Logo = styled.div`
@@ -31,17 +45,7 @@ export const Logo = styled.div`
   height: 40px;
 `;
 
-export const Catalog = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  background: ${({ theme }) => theme.colors.primary};
-  color: #ffffff;
-  border: none;
-`;
-
-export const Search = styled.div`
+export const Center = styled.div`
   position: relative;
   display: flex;
   justify-self: center;
@@ -50,25 +54,26 @@ export const Search = styled.div`
   max-width: 470px;
   width: 100%;
 
-  button {
+  & button {
     position: absolute;
     top: 0;
     right: 0;
 
-    width: max-content;
-    font-size: 100%;
     background: ${({ theme }) => theme.colors.primary};
     color: #ffffff;
     border: none;
   }
 `;
 
-export const Profile = styled.div`
+export const Right = styled.div`
+  position: relative;
+
   display: flex;
   gap: 25px;
   justify-self: end;
 
-  button {
+  & button {
+    width: 100%;
     padding: 0 15px;
     border-width: 1px;
     background: none;
