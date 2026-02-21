@@ -25,13 +25,16 @@ export default function Providers({
 	categories: Category[];
 	countries: Country[];
 }) {
-	const setCategories = useCategories((s) => s.setCategories);
+	const { setCategories, setActive } = useCategories();
 	const setCountries = useCountries((s) => s.setCountries);
 
 	useEffect(() => {
-		if (categories) setCategories(categories);
+		if (categories) {
+			setCategories(categories);
+			setActive(categories[0].id);
+		}
 		if (countries) setCountries(countries);
-	}, [categories, countries, setCategories, setCountries]);
+	}, [categories, countries, setCategories, setActive, setCountries]);
 
 	return (
 		<QueryClientProvider client={queryClient}>

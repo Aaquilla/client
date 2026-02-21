@@ -3,10 +3,15 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+	*::-webkit-scrollbar {
+		width: 0;	
+	}
+
 	* {
 		margin: 0;
 		padding: 0;
-		box-sizing: border-box
+		box-sizing: border-box;
+		user-select: none;
 	}
 	body {
 		width: 100dvw;
