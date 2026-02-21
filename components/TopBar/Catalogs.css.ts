@@ -19,24 +19,29 @@ export const Categories = styled.ul`
     
     overflow-y: auto;
 `;
-export const Category = styled.button<{ $active?: boolean }>`
+export const Category = styled.li<{ $active?: boolean }>`
     height: 40px;
     width: 100%;
-    border-radius: 0;
+    
+    button {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
 
-    background: ${(params) => (params.$active ? params.theme.colors.primary : "unset")};
-    color: ${(params) => (params.$active ? "#ffffff" : "unset")};
+        background: ${(params) => (params.$active ? params.theme.colors.primary : "unset")};
+        color: ${(params) => (params.$active ? "#ffffff" : "unset")};
+    }
 
-    &:nth-child(1) {
+    &:nth-child(1) button {
         border-radius: 10px 10px 0 0;
     }
-    &:nth-last-child(1) {
+    &:nth-last-child(1) button {
         border-radius: 0 0 10px 10px;
     }
-    &:not(:nth-child(1)) {
+    &:not(:nth-child(1)) button {
         border-top: none;
     }
-    &:hover {
+    &:hover button {
         background: ${(props) => props.theme.colors.primary};
         color: #ffffff;
     }

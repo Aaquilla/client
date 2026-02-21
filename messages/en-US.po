@@ -20,3 +20,18 @@ msgstr "Find your treasure..."
 msgctxt "navigation"
 msgid "xmcVZ0"
 msgstr "Search"
+
+#: components/TopBar/TopBar.tsx:47
+msgctxt "navigation"
+msgid "18aFPn"
+msgstr "Basket"
+
+#: components/TopBar/TopBar.tsx:50
+msgctxt "navigation"
+msgid "itPgxd"
+msgstr "Profile"
+
+#: components/TopBar/TopBar.tsx:55
+msgctxt "navigation"
+msgid "brizuL"
+msgstr "Change locale"

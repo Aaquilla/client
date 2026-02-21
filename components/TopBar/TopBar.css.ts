@@ -36,6 +36,7 @@ export const Left = styled.div`
     background: ${({ theme }) => theme.colors.primary};
     color: #ffffff;
     border: none;
+    gap: 10px;
   }
 `;
 
@@ -78,5 +79,6 @@ export const Right = styled.div`
     border-width: 1px;
     background: none;
     color: unset;
+    gap: 10px;
   }
 `;

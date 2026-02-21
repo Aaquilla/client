@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { Montserrat_Alternates } from "next/font/google";
 
@@ -9,6 +10,10 @@ import TopBar from "@/components/TopBar/TopBar";
 import { getCategories } from "@/lib/categories";
 import { getCountries } from "@/lib/countries";
 import { Main } from "./layout.css";
+
+export const metadata: Metadata = {
+	title: "Shop",
+};
 
 const montserrat = Montserrat_Alternates({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800"],

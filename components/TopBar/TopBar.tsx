@@ -34,7 +34,7 @@ const TopBar = () => {
 					<Logo>
 						<Image fill src="/logo.png" sizes="60px 60px, 40px 40px" alt="logo" loading="eager" />
 					</Logo>
-					<button type="button" name="catalog" onClick={() => setCatalogActive(!catalogActive)}>
+					<button type="button" onClick={() => setCatalogActive(!catalogActive)}>
 						<LayoutGrid size={20} strokeWidth={1} absoluteStrokeWidth />
 						{t("Catalog")}
 					</button>
@@ -44,13 +44,17 @@ const TopBar = () => {
 					<button type="button">{t("Search")}</button>
 				</Center>
 				<Right>
-					<button type="button">
+					<button type="button" aria-label={t("Basket")}>
 						<ShoppingBasket size={25} strokeWidth={1} absoluteStrokeWidth />
 					</button>
-					<button type="button">
+					<button type="button" aria-label={t("Profile")}>
 						<CircleUserRound size={25} strokeWidth={1} absoluteStrokeWidth />
 					</button>
-					<button type="button" onClick={() => setLocaleActive(!localeActive)}>
+					<button
+						type="button"
+						aria-label={t("Change locale")}
+						onClick={() => setLocaleActive(!localeActive)}
+					>
 						{localesDisplay[selected][0]}
 						{localeActive ? (
 							<ChevronUp size={20} strokeWidth={1} absoluteStrokeWidth />
@@ -61,7 +65,7 @@ const TopBar = () => {
 					<LocaleSelector $active={localeActive}>
 						{locales.map((l) => (
 							<li key={l}>
-								<button type="button" name={localesDisplay[l][1]} onClick={() => onChange(l)}>
+								<button type="button" onClick={() => onChange(l)}>
 									{localesDisplay[l][1]}
 								</button>
 							</li>
@@ -72,12 +76,10 @@ const TopBar = () => {
 			<Catalog $active={catalogActive}>
 				<Categories>
 					{categories.map((category) => (
-						<Category
-							key={category.id}
-							onClick={() => setActiveCategory(category.id)}
-							$active={activeCategory === category.id}
-						>
-							{category.name}
+						<Category key={category.id} $active={activeCategory === category.id}>
+							<button type="button" onClick={() => setActiveCategory(category.id)}>
+								{category.name}
+							</button>
 						</Category>
 					))}
 				</Categories>

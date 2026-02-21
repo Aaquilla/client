@@ -20,3 +20,18 @@ msgstr "Знайти свій скарб..."
 msgctxt "navigation"
 msgid "xmcVZ0"
 msgstr "Пошук"
+
+#: components/TopBar/TopBar.tsx:47
+msgctxt "navigation"
+msgid "18aFPn"
+msgstr ""
+
+#: components/TopBar/TopBar.tsx:50
+msgctxt "navigation"
+msgid "itPgxd"
+msgstr ""
+
+#: components/TopBar/TopBar.tsx:55
+msgctxt "navigation"
+msgid "brizuL"
+msgstr ""
