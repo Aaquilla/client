@@ -8,14 +8,14 @@ export const Catalog = styled.div<{ $active?: boolean }>`
     grid-template-columns: auto 1fr;
     gap: 30px;
 
-    margin-top: ${(props) => (props.$active ? "10px" : "0")};
-    overflow: hidden;
-    
+    opacity: ${(props) => (props.$active ? 1 : 0)};
+
     transition: all .3s ease;
 `;
 
 export const Categories = styled.ul`
-    height: 100%;
+    margin-top: 10px;
+    height: calc(100% - 10px);
     
     overflow-y: auto;
 `;
@@ -48,8 +48,9 @@ export const Category = styled.li<{ $active?: boolean }>`
 `;
 
 export const SubCategories = styled.div`
+    margin-top: 10px;
+    height: calc(100% - 10px);
     width: 100%;
-    height: 100%;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

@@ -10,6 +10,7 @@ export const Content = styled.div`
   
   padding: 15px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 `;
 
 export const Bar = styled.div`
