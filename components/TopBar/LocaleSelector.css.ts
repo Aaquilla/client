@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LocaleSelector = styled.ul<{ $active?: boolean }>`
     position: absolute;
 	right: 0;
-	top: calc(100% + 15px);
+	top: calc(100% + 5px);
 
 	display: ${(props) => (props.$active ? "flex" : "none")};
 	flex-direction: column;
@@ -12,6 +12,8 @@ export const LocaleSelector = styled.ul<{ $active?: boolean }>`
 	border: 1px solid ${({ theme }) => theme.colors.primary};
 	border-radius: 10px;
 	overflow: hidden;
+
+	z-index: 1000;
 
 	& li > button {
 		width: 100%;

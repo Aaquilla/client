@@ -6,32 +6,32 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: components/TopBar/TopBar.tsx:39
+#: components/TopBar/TopBar.tsx:38
 msgctxt "navigation"
 msgid "GOdq5V"
 msgstr "Catalog"
 
-#: components/TopBar/TopBar.tsx:43
+#: components/TopBar/TopBar.tsx:42
 msgctxt "navigation"
 msgid "6bSS05"
 msgstr "Find your treasure..."
 
-#: components/TopBar/TopBar.tsx:44
+#: components/TopBar/TopBar.tsx:43
 msgctxt "navigation"
 msgid "xmcVZ0"
 msgstr "Search"
 
-#: components/TopBar/TopBar.tsx:47
+#: components/TopBar/TopBar.tsx:46
 msgctxt "navigation"
 msgid "18aFPn"
 msgstr "Basket"
 
-#: components/TopBar/TopBar.tsx:50
+#: components/TopBar/TopBar.tsx:49
 msgctxt "navigation"
 msgid "itPgxd"
 msgstr "Profile"
 
-#: components/TopBar/TopBar.tsx:55
+#: components/TopBar/TopBar.tsx:54
 msgctxt "navigation"
 msgid "brizuL"
 msgstr "Change locale"

@@ -5,6 +5,7 @@ export interface Category {
 	id: number;
 	name: string;
 	image_url: string | null;
+	category_id: number | null;
 	categories: Category[];
 }
 
@@ -24,7 +25,15 @@ export const useCategories = create<CategoriesState>()(
 			active: null,
 			activeSubCategories: [],
 
-			setCategories: (categories) => set(() => ({ categories })),
+			setCategories: (categories) =>
+				set(() => {
+					const category = categories.length !== 0 ? categories[0] : null;
+					return {
+						categories,
+						active: category ? category.id : null,
+						activeSubCategories: category ? category.categories : [],
+					};
+				}),
 			setActive: (active) =>
 				set((state) => ({
 					active: state.categories.find((c) => c.id === active) ? active : null,

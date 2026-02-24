@@ -7,15 +7,12 @@ import { useState } from "react";
 
 import { setLocaleCookie } from "@/app/actions";
 import { type Locale, locales, localesDisplay } from "@/i18n";
-import { useCategories } from "@/store";
-import { Catalog, Categories, Category, SubCategories, SubCategory } from "./Catalogs.css";
+import { useModals } from "@/store";
 import { LocaleSelector } from "./LocaleSelector.css";
 import { Bar, Center, Content, Left, Logo, Right } from "./TopBar.css";
 
 const TopBar = () => {
 	const t = useExtracted("navigation");
-	const { categories, active: activeCategory, activeSubCategories, setActive: setActiveCategory } = useCategories();
-	const [catalogActive, setCatalogActive] = useState<boolean>(false);
 
 	const locale = useLocale() as Locale;
 	const [selected, setSelected] = useState<Locale>(locale);
@@ -27,6 +24,8 @@ const TopBar = () => {
 		setLocaleCookie(locale);
 	};
 
+	const { catalog, setCatalog, basket, setBasket } = useModals();
+
 	return (
 		<Content>
 			<Bar>
@@ -34,7 +33,7 @@ const TopBar = () => {
 					<Logo>
 						<Image fill src="/logo.png" sizes="60px 60px, 40px 40px" alt="logo" loading="eager" />
 					</Logo>
-					<button type="button" onClick={() => setCatalogActive(!catalogActive)}>
+					<button type="button" onClick={() => setCatalog(!catalog)}>
 						<LayoutGrid size={20} strokeWidth={1} absoluteStrokeWidth />
 						{t("Catalog")}
 					</button>
@@ -44,7 +43,7 @@ const TopBar = () => {
 					<button type="button">{t("Search")}</button>
 				</Center>
 				<Right>
-					<button type="button" aria-label={t("Basket")}>
+					<button type="button" aria-label={t("Basket")} onClick={() => setBasket(!basket)}>
 						<ShoppingBasket size={25} strokeWidth={1} absoluteStrokeWidth />
 					</button>
 					<button type="button" aria-label={t("Profile")}>
@@ -73,22 +72,6 @@ const TopBar = () => {
 					</LocaleSelector>
 				</Right>
 			</Bar>
-			<Catalog $active={catalogActive}>
-				<Categories>
-					{categories.map((category) => (
-						<Category key={category.id} $active={activeCategory === category.id}>
-							<button type="button" onClick={() => setActiveCategory(category.id)}>
-								{category.name}
-							</button>
-						</Category>
-					))}
-				</Categories>
-				<SubCategories>
-					{activeSubCategories.map((category) => (
-						<SubCategory key={category.id}>{category.name}</SubCategory>
-					))}
-				</SubCategories>
-			</Catalog>
 		</Content>
 	);
 };
