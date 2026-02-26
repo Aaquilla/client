@@ -24,8 +24,9 @@ const montserrat = Montserrat_Alternates({
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const locale = await getLocale();
-	const categories = await getCategories();
-	const countries = await getCountries();
+
+	const categories = await getCategories(locale);
+	const countries = await getCountries(locale);
 
 	return (
 		<html lang={locale}>

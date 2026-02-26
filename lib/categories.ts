@@ -10,8 +10,11 @@ export const Category: z.ZodType<any> = z.lazy(() =>
 	}),
 );
 
-export const getCategories = async () => {
-	const data = await fetch(`${process.env.BACKEND_URL}/categories?mode=tree`, { next: { revalidate: 3600 } });
+export const getCategories = async (locale: string) => {
+	const data = await fetch(`${process.env.BACKEND_URL}/categories?mode=tree`, {
+		headers: { "Accept-Language": locale },
+		next: { revalidate: 3600, tags: ["categories"] },
+	});
 	const json = await data.json();
 	return z.array(Category).parse(json);
 };
