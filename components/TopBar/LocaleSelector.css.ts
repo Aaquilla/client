@@ -14,7 +14,7 @@ export const LocaleSelector = styled.ul<{ $active?: boolean }>`
 	border-radius: 10px;
 	overflow: hidden;
 
-	z-index: 1000;
+	z-index: 1000000;
 
 	& li > button {
 		width: 100%;
