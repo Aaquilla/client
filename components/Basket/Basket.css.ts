@@ -7,10 +7,12 @@ export const Content = styled.div<{ $active?: boolean }>`
 
     height: calc(100% - 85px - 15px);
     width: ${({ $active }) => ($active ? "20dvw" : "0")};
+    pointer-events: ${({ $active }) => ($active ? "auto" : "none")};
     overflow: hidden;
 
     transition: all .3s ease;
     will-change: width, opacity;
+    z-index: 100000;
 `;
 
 export const ContentWrapper = styled.div`

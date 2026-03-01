@@ -3,18 +3,13 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useEffect } from "react";
-import { type DefaultTheme, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import { type Category, type Country, useCategories, useCountries } from "@/store";
 import GlobalStyle from "./GlobalStyle";
+import theme from "./theme";
 
 const queryClient = new QueryClient();
-const defaultTheme: DefaultTheme = {
-	colors: {
-		primary: "#3b3028",
-		secondary: "#d3d3d3",
-	},
-};
 
 export default function Providers({
 	children,
@@ -35,7 +30,7 @@ export default function Providers({
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			<ThemeProvider theme={defaultTheme}>
+			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				{children}
 			</ThemeProvider>

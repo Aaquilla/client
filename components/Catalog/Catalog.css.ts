@@ -9,8 +9,11 @@ export const Content = styled.div<{ $active?: boolean; $basket?: boolean }>`
     height: ${(props) => (props.$active ? "40dvh" : "0")};
     opacity: ${(props) => (props.$active ? 1 : 0)};
 
+    pointer-events: ${({ $active }) => ($active ? "auto" : "none")};
+
     transition: all .3s ease;
     will-change: height, opacity;
+    z-index: 100000;
 `;
 
 export const ContentWrapper = styled.div`

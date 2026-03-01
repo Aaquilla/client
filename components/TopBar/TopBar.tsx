@@ -3,6 +3,7 @@
 import { ChevronDown, ChevronUp, CircleUserRound, LayoutGrid, ShoppingBasket } from "lucide-react";
 import { useExtracted, useLocale } from "next-intl";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 
 import { setLocaleCookie } from "@/app/actions";
@@ -46,7 +47,7 @@ const TopBar = () => {
 					<button type="button" aria-label={t("Basket")} onClick={() => setBasket(!basket)}>
 						<ShoppingBasket size={25} strokeWidth={1} absoluteStrokeWidth />
 					</button>
-					<button type="button" aria-label={t("Profile")}>
+					<button type="button" aria-label={t("Profile")} onClick={() => redirect("/profile")}>
 						<CircleUserRound size={25} strokeWidth={1} absoluteStrokeWidth />
 					</button>
 					<button

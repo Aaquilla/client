@@ -6,32 +6,62 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: components/TopBar/TopBar.tsx:38
+#: components/ProfileBar/ProfileBar.tsx:15
+msgctxt "profile"
+msgid "itPgxd"
+msgstr ""
+
+#: components/ProfileBar/ProfileBar.tsx:16
+msgctxt "profile"
+msgid "SMrXWc"
+msgstr ""
+
+#: components/ProfileBar/ProfileBar.tsx:17
+msgctxt "profile"
+msgid "X7jl6w"
+msgstr ""
+
+#: components/ProfileBar/ProfileBar.tsx:18
+msgctxt "profile"
+msgid "aMwxYb"
+msgstr ""
+
+#: components/ProfileBar/ProfileBar.tsx:19
+msgctxt "profile"
+msgid "3jq41G"
+msgstr ""
+
+#: components/ProfileBar/ProfileBar.tsx:20
+msgctxt "profile"
+msgid "C81/uG"
+msgstr ""
+
+#: components/TopBar/TopBar.tsx:39
 msgctxt "navigation"
 msgid "GOdq5V"
 msgstr "Каталог"
 
-#: components/TopBar/TopBar.tsx:42
+#: components/TopBar/TopBar.tsx:43
 msgctxt "navigation"
 msgid "6bSS05"
 msgstr "Знайти свій скарб..."
 
-#: components/TopBar/TopBar.tsx:43
+#: components/TopBar/TopBar.tsx:44
 msgctxt "navigation"
 msgid "xmcVZ0"
 msgstr "Пошук"
 
-#: components/TopBar/TopBar.tsx:46
+#: components/TopBar/TopBar.tsx:47
 msgctxt "navigation"
 msgid "18aFPn"
 msgstr "Корзина"
 
-#: components/TopBar/TopBar.tsx:49
+#: components/TopBar/TopBar.tsx:50
 msgctxt "navigation"
 msgid "itPgxd"
 msgstr "Профіль"
 
-#: components/TopBar/TopBar.tsx:54
+#: components/TopBar/TopBar.tsx:55
 msgctxt "navigation"
 msgid "brizuL"
 msgstr "Змінити мову"

@@ -7,7 +7,8 @@ export const LocaleSelector = styled.ul<{ $active?: boolean }>`
 
 	display: ${(props) => (props.$active ? "flex" : "none")};
 	flex-direction: column;
-
+	
+    pointer-events: ${({ $active }) => ($active ? "auto" : "none")};
 	background: #ffffff;
 	border: 1px solid ${({ theme }) => theme.colors.primary};
 	border-radius: 10px;

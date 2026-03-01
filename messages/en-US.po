@@ -6,32 +6,62 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: components/TopBar/TopBar.tsx:38
+#: components/ProfileBar/ProfileBar.tsx:15
+msgctxt "profile"
+msgid "itPgxd"
+msgstr "Profile"
+
+#: components/ProfileBar/ProfileBar.tsx:16
+msgctxt "profile"
+msgid "SMrXWc"
+msgstr "Favorites"
+
+#: components/ProfileBar/ProfileBar.tsx:17
+msgctxt "profile"
+msgid "X7jl6w"
+msgstr "Orders"
+
+#: components/ProfileBar/ProfileBar.tsx:18
+msgctxt "profile"
+msgid "aMwxYb"
+msgstr "Countries"
+
+#: components/ProfileBar/ProfileBar.tsx:19
+msgctxt "profile"
+msgid "3jq41G"
+msgstr "Coffee"
+
+#: components/ProfileBar/ProfileBar.tsx:20
+msgctxt "profile"
+msgid "C81/uG"
+msgstr "Logout"
+
+#: components/TopBar/TopBar.tsx:39
 msgctxt "navigation"
 msgid "GOdq5V"
 msgstr "Catalog"
 
-#: components/TopBar/TopBar.tsx:42
+#: components/TopBar/TopBar.tsx:43
 msgctxt "navigation"
 msgid "6bSS05"
 msgstr "Find your treasure..."
 
-#: components/TopBar/TopBar.tsx:43
+#: components/TopBar/TopBar.tsx:44
 msgctxt "navigation"
 msgid "xmcVZ0"
 msgstr "Search"
 
-#: components/TopBar/TopBar.tsx:46
+#: components/TopBar/TopBar.tsx:47
 msgctxt "navigation"
 msgid "18aFPn"
 msgstr "Basket"
 
-#: components/TopBar/TopBar.tsx:49
+#: components/TopBar/TopBar.tsx:50
 msgctxt "navigation"
 msgid "itPgxd"
 msgstr "Profile"
 
-#: components/TopBar/TopBar.tsx:54
+#: components/TopBar/TopBar.tsx:55
 msgctxt "navigation"
 msgid "brizuL"
 msgstr "Change locale"

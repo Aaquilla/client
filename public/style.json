@@ -1,0 +1,75 @@
+{
+  "version": 8,
+  "name": "Empty Style",
+  "metadata": {},
+  "sources": {
+    "maplibre": {
+      "type": "vector",
+      "url": "https://demotiles.maplibre.org/tiles/tiles.json"
+    }
+  },
+  "sprite": "",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgba(255, 255, 255, 1)"
+      }
+    },
+    {
+      "id": "countries-fill",
+      "type": "fill",
+      "source": "maplibre",
+      "source-layer": "countries",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "#e9e3d9"
+      }
+    },
+    {
+      "id": "visited-countries",
+      "type": "fill",
+      "source": "maplibre",
+      "source-layer": "countries",
+      "maxzoom": 24,
+      "filter": [
+        "all"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "ADM0_A3"
+          ],
+          "UKR",
+          "#C3A06F",
+          "#e9e3d9"
+        ]
+      }
+    },
+    {
+      "id": "coastline",
+      "type": "line",
+      "source": "maplibre",
+      "source-layer": "countries",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(121, 100, 83, 1)",
+        "line-opacity": 1,
+        "line-translate-anchor": "map",
+        "line-width": 0.1
+      }
+    }
+  ],
+  "id": "a2g0dwd"
+}
