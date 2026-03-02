@@ -6,6 +6,16 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
+#: app/profile/countries/page.tsx:12
+msgctxt "profile"
+msgid "VdXF7G"
+msgstr "Open countries map"
+
+#: app/profile/page.tsx:9
+msgctxt "profile"
+msgid "DgPFXk"
+msgstr "Hermes Traveler's Passport"
+
 #: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"
 msgid "itPgxd"

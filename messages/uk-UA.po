@@ -6,35 +6,45 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
+#: app/profile/countries/page.tsx:12
+msgctxt "profile"
+msgid "VdXF7G"
+msgstr "Мапа відкритих країн"
+
+#: app/profile/page.tsx:9
+msgctxt "profile"
+msgid "DgPFXk"
+msgstr "Паспорт мандрівника Hermes"
+
 #: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"
 msgid "itPgxd"
-msgstr ""
+msgstr "Профіль"
 
 #: components/ProfileBar/ProfileBar.tsx:16
 msgctxt "profile"
 msgid "SMrXWc"
-msgstr ""
+msgstr "Вподобані товари"
 
 #: components/ProfileBar/ProfileBar.tsx:17
 msgctxt "profile"
 msgid "X7jl6w"
-msgstr ""
+msgstr "Історія замовлень"
 
 #: components/ProfileBar/ProfileBar.tsx:18
 msgctxt "profile"
 msgid "aMwxYb"
-msgstr ""
+msgstr "Відкриті країни"
 
 #: components/ProfileBar/ProfileBar.tsx:19
 msgctxt "profile"
 msgid "3jq41G"
-msgstr ""
+msgstr "Кава паспорт"
 
 #: components/ProfileBar/ProfileBar.tsx:20
 msgctxt "profile"
 msgid "C81/uG"
-msgstr ""
+msgstr "Вийти"
 
 #: components/TopBar/TopBar.tsx:39
 msgctxt "navigation"
