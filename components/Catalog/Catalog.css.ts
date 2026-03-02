@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Content = styled.div<{ $active?: boolean; $basket?: boolean }>`
@@ -44,7 +45,12 @@ export const Categories = styled.ul`
 export const Category = styled.li<{ $active?: boolean }>`
     width: 100%;
     
-    button {
+    a {
+        display: flex;
+        align-items: center;
+
+        padding: 0 20px;
+
         width: 100%;
         height: 100%;
         border-radius: 0;
@@ -54,15 +60,13 @@ export const Category = styled.li<{ $active?: boolean }>`
         color: ${(params) => (params.$active ? "#ffffff" : "unset")};
     }
 
-    &:hover button {
+    &:hover a {
         background: ${(props) => props.theme.colors.primary};
         color: #ffffff;
     }
 `;
 
 export const SubCategories = styled.div`
-    width: 100%;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: calc(50% - 15px);
@@ -70,12 +74,16 @@ export const SubCategories = styled.div`
 
     overflow-y: auto;
 `;
-export const SubCategory = styled.button<{ $active?: boolean }>`
-    height: 100%;
+export const SubCategory = styled(Link)<{ $active?: boolean }>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     color: ${(params) => (params.$active ? "#ffffff" : "unset")};
-    border-color: ${({ $active, theme }) => ($active ? "none" : theme.colors.secondary)};
     background: ${({ $active, theme }) => ($active ? theme.colors.primary : "unset")};
+
+    border-radius: 10px;
+    border: 1px solid ${({ $active, theme }) => ($active ? "none" : theme.colors.secondary)};
 
     &:hover {
         background: ${(props) => props.theme.colors.primary};

@@ -2,21 +2,21 @@
 
 import { Coffee, Heart, History, LogOut, MapPin, User } from "lucide-react";
 import { useExtracted } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { Content, Item, Items } from "./ProfileBar.css";
+import { Content, Item, ItemIcon, Items } from "./ProfileBar.css";
 
 const ProfileBar = () => {
 	const t = useExtracted("profile");
 	const pathname = usePathname();
-	const router = useRouter();
 
 	const items = [
 		{ href: "/profile", Icon: User, label: t("Profile") },
 		{ href: "/profile/favorites", Icon: Heart, label: t("Favorites") },
-		{ href: "/profile/orders", Icon: History, label: t("Orders") },
+		{ href: "/profile/orders", Icon: History, label: t("Order history") },
 		{ href: "/profile/countries", Icon: MapPin, label: t("Countries") },
-		{ href: "/profile/coffee", Icon: Coffee, label: t("Coffee") },
+		{ href: "/profile/coffee", Icon: Coffee, label: t("Coffee passport") },
 		{ href: "/profile/logout", Icon: LogOut, label: t("Logout") },
 	];
 
@@ -25,10 +25,12 @@ const ProfileBar = () => {
 			<Items>
 				{items.map(({ href, Icon, label }) => (
 					<Item key={href} $active={pathname === href}>
-						<button type="button" onClick={() => router.push(href)}>
-							<Icon />
+						<Link href={href}>
+							<ItemIcon>
+								<Icon strokeWidth={1} absoluteStrokeWidth />
+							</ItemIcon>
 							{label}
-						</button>
+						</Link>
 					</Item>
 				))}
 			</Items>

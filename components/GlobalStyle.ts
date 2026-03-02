@@ -38,6 +38,11 @@ const GlobalStyle = createGlobalStyle`
 		cursor: pointer;
 	}
 
+	a {
+		color: unset;
+		text-decoration: none;
+	}
+
 	ul,li { 
 		list-style: none;
 	}

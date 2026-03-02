@@ -7,7 +7,6 @@ const page = () => {
 		<div>
 			<div>
 				<span>{t("Hermes Traveler's Passport")}</span>
-				Паспорт мандрівника Hermes
 				<div></div>
 			</div>
 			<div></div>

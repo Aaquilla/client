@@ -1,6 +1,7 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 import { useCategories, useModals } from "@/store";
@@ -8,10 +9,8 @@ import { Categories, Category, Content, ContentWrapper, SubCategories, SubCatego
 
 const Catalog = () => {
 	const pathname = usePathname();
-	const router = useRouter();
 
 	const { categories, active: activeCategory, activeSubCategories, setActive: setActiveCategory } = useCategories();
-
 	const { catalog, basket } = useModals();
 
 	useEffect(() => {
@@ -27,15 +26,7 @@ const Catalog = () => {
 				<Categories>
 					{categories.map((category) => (
 						<Category key={category.id} $active={activeCategory === category.id}>
-							<button
-								type="button"
-								onClick={() => {
-									setActiveCategory(category.id);
-									router.push(`/${category.id}`);
-								}}
-							>
-								{category.name}
-							</button>
+							<Link href={`/${category.id}`}>{category.name}</Link>
 						</Category>
 					))}
 				</Categories>
@@ -43,7 +34,7 @@ const Catalog = () => {
 					{activeSubCategories.map((category) => (
 						<SubCategory
 							key={category.id}
-							onClick={() => router.push(`/${category.category_id}/${category.id}`)}
+							href={`/${category.category_id}/${category.id}`}
 							$active={pathname === `/${category.category_id}/${category.id}`}
 						>
 							{category.name}
