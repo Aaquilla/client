@@ -8,8 +8,5 @@ export const Content = styled.div`
     grid-template-columns: auto 1fr;
     gap: 30px;
 
-    justify-content: center;
-    align-items: center;
-
-    padding: 15px 40px;
+    padding: 40px;
 `;
