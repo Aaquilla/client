@@ -11,12 +11,12 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Мапа відкритих країн"
 
-#: app/profile/friends/page.tsx:13
+#: app/profile/friends/page.tsx:21
 msgctxt "profile"
 msgid "3s0ZWy"
 msgstr ""
 
-#: app/profile/friends/page.tsx:15
+#: app/profile/friends/page.tsx:23
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr ""

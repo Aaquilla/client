@@ -11,12 +11,12 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Open countries map"
 
-#: app/profile/friends/page.tsx:13
+#: app/profile/friends/page.tsx:21
 msgctxt "profile"
 msgid "3s0ZWy"
 msgstr "Invite friends and get bonuses!"
 
-#: app/profile/friends/page.tsx:15
+#: app/profile/friends/page.tsx:23
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Get +50 miles and coffee after your friend makes their first purchase for an amount of 150 UAH or more."

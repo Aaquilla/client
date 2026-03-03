@@ -2,12 +2,12 @@ import axios from "axios";
 
 import { useUser } from "@/store/user";
 
-const host = axios.create({ baseURL: process.env.NEXT_PUBLIC_BACKEND_URL });
+const host = axios.create({ baseURL: process.env.NEXT_PUBLIC_BACKEND_URL, withCredentials: true });
+
 host.interceptors.request.use(
-	(config) => {
-		const { accessToken } = useUser.getState();
-		if (!accessToken) return Promise.reject("no_access_token");
-		config.headers.Authorization = `Bearer ${accessToken}`;
+	async (config) => {
+		const token = useUser.getState().accessToken;
+		config.headers.Authorization = `Bearer ${token}`;
 		return config;
 	},
 	(error) => {
@@ -15,9 +15,23 @@ host.interceptors.request.use(
 	},
 );
 host.interceptors.response.use(
-	(response) => response,
-	({ response }) => {
-		console.log(response);
+	(response) => {
+		return response;
+	},
+	async (error) => {
+		if (error.response?.status === 401 && !error.config._retry) {
+			error.config._retry = true;
+			try {
+				const { data } = await host.get("/users/auth/refresh");
+				useUser.getState().setAccessToken(data.access_token);
+				error.config.headers.Authorization = `Bearer ${data.access_token}`;
+				const retryResponse = await host.request(error.config);
+				return retryResponse;
+			} catch (refreshError) {
+				return Promise.reject(refreshError);
+			}
+		}
+
 		return Promise.reject(error);
 	},
 );
