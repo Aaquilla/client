@@ -4,14 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import { useExtracted } from "next-intl";
 import Image from "next/image";
 
-import host from "@/lib";
+import { authHost } from "@/lib";
 import { Content, Item, Items } from "./page.css";
 
 const page = () => {
 	const t = useExtracted("profile");
 	const { data, isSuccess } = useQuery({
 		queryKey: ["friends"],
-		queryFn: () => host.get("/users/me/referrals").then(({ data }) => data),
+		queryFn: () => authHost.get("/users/me/referrals").then(({ data }) => data),
 		staleTime: 360000,
 	});
 

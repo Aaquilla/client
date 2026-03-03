@@ -3,10 +3,20 @@ import axios from "axios";
 import { useUser } from "@/store/user";
 
 const host = axios.create({ baseURL: process.env.NEXT_PUBLIC_BACKEND_URL, withCredentials: true });
+export const authHost = axios.create({ baseURL: process.env.NEXT_PUBLIC_BACKEND_URL, withCredentials: true });
 
-host.interceptors.request.use(
+authHost.interceptors.request.use(
 	async (config) => {
-		const token = useUser.getState().accessToken;
+		let token = useUser.getState().accessToken;
+		if (!token) {
+			try {
+				const { data } = await host.get("/users/auth/refresh");
+				useUser.getState().setAccessToken(data.access_token);
+				token = data.access_token;
+			} catch (error) {
+				return Promise.reject(error);
+			}
+		}
 		config.headers.Authorization = `Bearer ${token}`;
 		return config;
 	},
@@ -14,7 +24,7 @@ host.interceptors.request.use(
 		return Promise.reject(error);
 	},
 );
-host.interceptors.response.use(
+authHost.interceptors.response.use(
 	(response) => {
 		return response;
 	},
