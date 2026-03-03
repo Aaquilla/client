@@ -1,6 +1,6 @@
 "use client";
 
-import { Coffee, Heart, History, LogOut, MapPin, User } from "lucide-react";
+import { Coffee, Handshake, Heart, History, LogOut, MapPin, User } from "lucide-react";
 import { useExtracted } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,6 +16,7 @@ const ProfileBar = () => {
 		{ href: "/profile/favorites", Icon: Heart, label: t("Favorites") },
 		{ href: "/profile/orders", Icon: History, label: t("Order history") },
 		{ href: "/profile/countries", Icon: MapPin, label: t("Countries") },
+		{ href: "/profile/friends", Icon: Handshake, label: t("Hermes Friends") },
 		{ href: "/profile/coffee", Icon: Coffee, label: t("Coffee passport") },
 		{ href: "/profile/logout", Icon: LogOut, label: t("Logout") },
 	];

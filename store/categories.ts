@@ -9,7 +9,7 @@ export interface Category {
 	categories: Category[];
 }
 
-interface CategoriesState {
+interface CategoriesStore {
 	categories: Category[];
 	active: number | null;
 	activeSubCategories: Category[];
@@ -18,7 +18,7 @@ interface CategoriesState {
 	setActive: (active: number) => void;
 }
 
-export const useCategories = create<CategoriesState>()(
+export const useCategories = create<CategoriesStore>()(
 	devtools(
 		(set) => ({
 			categories: [],

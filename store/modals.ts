@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-interface ModalsState {
+interface ModalsStore {
 	catalog: boolean;
 	basket: boolean;
 
@@ -9,7 +9,7 @@ interface ModalsState {
 	setBasket: (basket: boolean) => void;
 }
 
-export const useModals = create<ModalsState>()(
+export const useModals = create<ModalsStore>()(
 	devtools(
 		(set) => ({
 			catalog: false,

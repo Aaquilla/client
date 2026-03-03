@@ -11,30 +11,45 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Open countries map"
 
+#: app/profile/friends/page.tsx:13
+msgctxt "profile"
+msgid "3s0ZWy"
+msgstr "Invite friends and get bonuses!"
+
+#: app/profile/friends/page.tsx:15
+msgctxt "profile"
+msgid "CsMutJ"
+msgstr "Get +50 miles and coffee after your friend makes their first purchase for an amount of 150 UAH or more."
+
 #: app/profile/page.tsx:9
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Hermes Traveler's Passport"
 
-#: components/ProfileBar/ProfileBar.tsx:16
+#: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"
 msgid "itPgxd"
 msgstr "Profile"
 
-#: components/ProfileBar/ProfileBar.tsx:17
+#: components/ProfileBar/ProfileBar.tsx:16
 msgctxt "profile"
 msgid "SMrXWc"
 msgstr "Favorites"
 
-#: components/ProfileBar/ProfileBar.tsx:18
+#: components/ProfileBar/ProfileBar.tsx:17
 msgctxt "profile"
 msgid "vQt5XU"
 msgstr "Order history"
 
-#: components/ProfileBar/ProfileBar.tsx:19
+#: components/ProfileBar/ProfileBar.tsx:18
 msgctxt "profile"
 msgid "aMwxYb"
 msgstr "Countries"
+
+#: components/ProfileBar/ProfileBar.tsx:19
+msgctxt "profile"
+msgid "L9J8qe"
+msgstr "Hermes Friends"
 
 #: components/ProfileBar/ProfileBar.tsx:20
 msgctxt "profile"

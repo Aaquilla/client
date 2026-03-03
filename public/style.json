@@ -40,9 +40,16 @@
       "filter": [
         "all",
         [
-          "==",
+          "in",
           "name",
-          "Ukraine"
+          "Ukraine",
+          "Poland",
+          "Germany",
+          "India",
+          "Canada",
+          "Japan",
+          "Australia",
+          "Chad"
         ]
       ],
       "paint": {

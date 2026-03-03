@@ -20,7 +20,7 @@ export default function Providers({
 	categories: Category[];
 	countries: Country[];
 }) {
-	const { setCategories } = useCategories();
+	const setCategories = useCategories((s) => s.setCategories);
 	const setCountries = useCountries((s) => s.setCountries);
 
 	useEffect(() => {

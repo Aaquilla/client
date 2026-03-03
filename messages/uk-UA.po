@@ -11,30 +11,45 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Мапа відкритих країн"
 
+#: app/profile/friends/page.tsx:13
+msgctxt "profile"
+msgid "3s0ZWy"
+msgstr ""
+
+#: app/profile/friends/page.tsx:15
+msgctxt "profile"
+msgid "CsMutJ"
+msgstr ""
+
 #: app/profile/page.tsx:9
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Паспорт мандрівника Hermes"
 
-#: components/ProfileBar/ProfileBar.tsx:16
+#: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"
 msgid "itPgxd"
 msgstr "Профіль"
 
-#: components/ProfileBar/ProfileBar.tsx:17
+#: components/ProfileBar/ProfileBar.tsx:16
 msgctxt "profile"
 msgid "SMrXWc"
 msgstr "Вподобані товари"
 
-#: components/ProfileBar/ProfileBar.tsx:18
+#: components/ProfileBar/ProfileBar.tsx:17
 msgctxt "profile"
 msgid "vQt5XU"
 msgstr "Історія замовлень"
 
-#: components/ProfileBar/ProfileBar.tsx:19
+#: components/ProfileBar/ProfileBar.tsx:18
 msgctxt "profile"
 msgid "aMwxYb"
 msgstr "Відкриті країни"
+
+#: components/ProfileBar/ProfileBar.tsx:19
+msgctxt "profile"
+msgid "L9J8qe"
+msgstr "Hermes Friends"
 
 #: components/ProfileBar/ProfileBar.tsx:20
 msgctxt "profile"

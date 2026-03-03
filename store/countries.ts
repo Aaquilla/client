@@ -7,13 +7,13 @@ export interface Country {
 	image_url: string | null;
 }
 
-interface CountriesState {
+interface CountriesStore {
 	countries: Country[];
 
 	setCountries: (country: Country[]) => void;
 }
 
-export const useCountries = create<CountriesState>()(
+export const useCountries = create<CountriesStore>()(
 	devtools(
 		(set) => ({
 			countries: [],

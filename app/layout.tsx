@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { Montserrat_Alternates } from "next/font/google";
@@ -30,7 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 	return (
 		<html lang={locale}>
-			<body className={clsx(montserrat.className)}>
+			<body className={montserrat.className}>
 				<StyledComponentsRegistry>
 					<ServerProviders>
 						<Providers categories={categories} countries={countries}>
