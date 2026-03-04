@@ -21,7 +21,12 @@ msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Get +50 miles and coffee after your friend makes their first purchase for an amount of 150 UAH or more."
 
-#: app/profile/page.tsx:9
+#: app/profile/friends/page.tsx:38
+msgctxt "profile"
+msgid "smWqVf"
+msgstr "Waiting for the first purchase"
+
+#: app/profile/page.tsx:13
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Hermes Traveler's Passport"

@@ -15,7 +15,7 @@ export const Items = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 
     overflow-y: auto;
 `;
@@ -28,7 +28,10 @@ export const Item = styled.div`
     border: 1px solid ${({ theme }) => theme.colors.secondary};
     padding: 10px 25px;
 
+    font-size: 16px;
+    
     & .status {
+        font-size: 14px;
         margin-left: auto
     }
 

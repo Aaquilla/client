@@ -35,7 +35,7 @@ const page = () => {
 								)}
 							</div>
 							<div>{u.full_name}</div>
-							<div className="status">Очікує першу покупку</div>
+							<div className="status">{t("Waiting for the first purchase")}</div>
 						</Item>
 					))}
 			</Items>

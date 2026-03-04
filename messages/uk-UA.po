@@ -14,14 +14,19 @@ msgstr "Мапа відкритих країн"
 #: app/profile/friends/page.tsx:21
 msgctxt "profile"
 msgid "3s0ZWy"
-msgstr ""
+msgstr "Запросіть друзів та отримайте бонуси!"
 
 #: app/profile/friends/page.tsx:23
 msgctxt "profile"
 msgid "CsMutJ"
-msgstr ""
+msgstr "Отримайте +50 миль і каву після того, як ваш друг зробить першу покупку на суму від 150 грн."
 
-#: app/profile/page.tsx:9
+#: app/profile/friends/page.tsx:38
+msgctxt "profile"
+msgid "smWqVf"
+msgstr "Очікує першу покупку"
+
+#: app/profile/page.tsx:13
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Паспорт мандрівника Hermes"
