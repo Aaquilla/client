@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const montserrat = Montserrat_Alternates({
-	weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+	weight: ["400", "500"],
 	subsets: ["cyrillic", "latin"],
 });
 

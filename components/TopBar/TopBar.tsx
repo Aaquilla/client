@@ -3,7 +3,7 @@
 import { ChevronDown, ChevronUp, CircleUserRound, LayoutGrid, ShoppingBasket } from "lucide-react";
 import { useExtracted, useLocale } from "next-intl";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+import Link from "next/link";
 import { useState } from "react";
 
 import { setLocaleCookie } from "@/app/actions";
@@ -32,7 +32,7 @@ const TopBar = () => {
 			<Bar>
 				<Left>
 					<Logo>
-						<Image fill src="/logo.png" sizes="60px 60px, 40px 40px" alt="logo" loading="eager" />
+						<Image src="/logo.png" width={40} height={40} alt="" priority />
 					</Logo>
 					<button type="button" onClick={() => setCatalog(!catalog)}>
 						<LayoutGrid size={20} strokeWidth={1} absoluteStrokeWidth />
@@ -47,9 +47,9 @@ const TopBar = () => {
 					<button type="button" aria-label={t("Basket")} onClick={() => setBasket(!basket)}>
 						<ShoppingBasket size={25} strokeWidth={1} absoluteStrokeWidth />
 					</button>
-					<button type="button" aria-label={t("Profile")} onClick={() => redirect("/profile")}>
+					<Link href="/profile" aria-label={t("Profile")}>
 						<CircleUserRound size={25} strokeWidth={1} absoluteStrokeWidth />
-					</button>
+					</Link>
 					<button
 						type="button"
 						aria-label={t("Change locale")}

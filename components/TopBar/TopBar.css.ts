@@ -72,12 +72,17 @@ export const Right = styled.div`
   gap: 25px;
   justify-self: end;
 
-  & button {
+  & button, a {
     width: 100%;
-    padding: 0 15px;
-    border-width: 1px;
-    background: none;
-    color: unset;
+    
+    border-radius: 10px;
+    border: 1px solid ${({ theme }) => theme.colors.primary};  
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
+    
+    padding: 0 15px;
   }
 `;
