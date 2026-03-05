@@ -1,7 +1,14 @@
+import { cookies } from "next/headers";
 import { type NextRequest, NextResponse } from "next/server";
 
 export async function proxy(request: NextRequest) {
-	return NextResponse.redirect(new URL("/login", request.url));
+	const session = (await cookies()).get("session_id");
+	if (!session) return NextResponse.redirect(new URL("/login", request.url));
+	else {
+		const headers = new Headers(request.headers);
+		headers.set("x-current-path", request.nextUrl.pathname);
+		return NextResponse.next({ headers });
+	}
 }
 
 export const config = {
@@ -9,7 +16,6 @@ export const config = {
 		{
 			source: "/profile/:path*",
 			locale: false,
-			missing: [{ type: "cookie", key: "session_id" }],
 		},
 	],
 };

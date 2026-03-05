@@ -1,8 +1,10 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
+import { QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { useEffect } from "react";
+import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 import { type Category, type Country, useCategories, useCountries } from "@/store";
@@ -28,13 +30,19 @@ export default function Providers({
 		if (countries) setCountries(countries);
 	}, [categories, countries, setCategories, setCountries]);
 
+	const [localStoragePersister] = useState(() =>
+		createAsyncStoragePersister({
+			storage: typeof window !== "undefined" ? window.localStorage : undefined,
+		}),
+	);
+
 	return (
-		<QueryClientProvider client={queryClient}>
+		<PersistQueryClientProvider client={queryClient} persistOptions={{ persister: localStoragePersister }}>
 			<ThemeProvider theme={theme}>
 				<GlobalStyle />
 				{children}
 			</ThemeProvider>
 			<ReactQueryDevtools />
-		</QueryClientProvider>
+		</PersistQueryClientProvider>
 	);
 }

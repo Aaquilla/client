@@ -18,7 +18,6 @@ const ProfileBar = () => {
 		{ href: "/profile/countries", Icon: MapPin, label: t("Countries") },
 		{ href: "/profile/friends", Icon: Handshake, label: t("Hermes Friends") },
 		{ href: "/profile/coffee", Icon: Coffee, label: t("Coffee passport") },
-		{ href: "/profile/logout", Icon: LogOut, label: t("Logout") },
 	];
 
 	return (
@@ -26,7 +25,7 @@ const ProfileBar = () => {
 			<Items>
 				{items.map(({ href, Icon, label }) => (
 					<Item key={href} $active={pathname === href}>
-						<Link href={href} prefetch={false}>
+						<Link href={href}>
 							<ItemIcon>
 								<Icon strokeWidth={1} absoluteStrokeWidth />
 							</ItemIcon>
@@ -34,6 +33,14 @@ const ProfileBar = () => {
 						</Link>
 					</Item>
 				))}
+				<Item $active={pathname === "/profile/logout"}>
+					<Link href={"/profile/logout"} prefetch={false}>
+						<ItemIcon>
+							<LogOut strokeWidth={1} absoluteStrokeWidth />
+						</ItemIcon>
+						{t("Logout")}
+					</Link>
+				</Item>
 			</Items>
 		</Content>
 	);

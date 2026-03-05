@@ -29,6 +29,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 	return (
 		<html lang={locale}>
+			<head>
+				<meta name="robots" content="noindex, nofollow" />
+			</head>
 			<body className={montserrat.className}>
 				<StyledComponentsRegistry>
 					<ServerProviders>

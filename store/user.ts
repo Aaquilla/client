@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools, persist } from "zustand/middleware";
 
 interface UserStore {
 	accessToken: string;
@@ -9,11 +9,14 @@ interface UserStore {
 
 export const useUser = create<UserStore>()(
 	devtools(
-		(set) => ({
-			accessToken: "",
+		persist(
+			(set) => ({
+				accessToken: "",
 
-			setAccessToken: (accessToken) => set(() => ({ accessToken })),
-		}),
+				setAccessToken: (accessToken) => set(() => ({ accessToken })),
+			}),
+			{ name: "auth_info" },
+		),
 		{ name: "UserStore" },
 	),
 );

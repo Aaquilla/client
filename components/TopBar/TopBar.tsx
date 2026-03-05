@@ -31,7 +31,7 @@ const TopBar = () => {
 		<Content>
 			<Bar>
 				<Left>
-					<Logo>
+					<Logo href="/" aria-label={t("Shop")}>
 						<Image src="/logo.png" width={40} height={40} alt="" priority />
 					</Logo>
 					<button type="button" onClick={() => setCatalog(!catalog)}>

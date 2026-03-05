@@ -61,10 +61,15 @@ msgctxt "profile"
 msgid "kw+M4w"
 msgstr "Кава паспорт"
 
-#: components/ProfileBar/ProfileBar.tsx:21
+#: components/ProfileBar/ProfileBar.tsx:41
 msgctxt "profile"
 msgid "C81/uG"
 msgstr "Вийти"
+
+#: components/TopBar/TopBar.tsx:34
+msgctxt "navigation"
+msgid "Dxd1uB"
+msgstr "Магазин"
 
 #: components/TopBar/TopBar.tsx:39
 msgctxt "navigation"

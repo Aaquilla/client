@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import theme from "../theme";
+
 export const Content = styled.div`
     width: 340px;
 `;
@@ -29,13 +31,13 @@ export const Item = styled.li<{ $active?: boolean }>`
         padding: 0 20px;
 
         border-radius: 15px;
-        border: 1px solid ${({ $active, theme }) => ($active ? theme.colors.primary : theme.colors.secondary)};
+        border: 1px solid ${({ $active }) => ($active ? theme.colors.primary : theme.colors.secondary)};
 
         font-weight: ${({ $active }) => ($active ? 500 : 400)};
 
         & span {
-            color: ${({ $active, theme }) => ($active ? "#ffffff" : theme.colors.primary)};
-            background: ${({ $active, theme }) => ($active ? theme.colors.primary : "unset")};
+            color: ${({ $active }) => ($active ? "#ffffff" : theme.colors.primary)};
+            background: ${({ $active }) => ($active ? theme.colors.primary : "unset")};
         }
     }
 `;
@@ -49,6 +51,6 @@ export const ItemIcon = styled.span`
     align-items: center;
 
     padding: 6px;
-    border: 1px solid ${({ theme }) => theme.colors.primary};
+    border: 1px solid ${theme.colors.primary};
     border-radius: 50%;
 `;

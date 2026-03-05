@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Content = styled.div`
@@ -39,7 +40,7 @@ export const Left = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
   position: relative;
   width: 40px;
   height: 40px;
