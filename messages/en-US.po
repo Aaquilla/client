@@ -6,7 +6,7 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: app/profile/countries/page.tsx:12
+#: app/profile/countries/page.tsx:19
 msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Open countries map"

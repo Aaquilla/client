@@ -1,4 +1,5 @@
 import { Countries } from "@/types/countries";
+import { authHost } from ".";
 
 export const getCountries = async (locale: string) => {
 	const data = await fetch(`${process.env.BACKEND_URL}/countries`, {
@@ -7,4 +8,9 @@ export const getCountries = async (locale: string) => {
 	});
 	const json = await data.json();
 	return Countries.parse(json);
+};
+
+export const getUserCountries = async () => {
+	const { data } = await authHost.get("/users/me/countries");
+	return data;
 };
