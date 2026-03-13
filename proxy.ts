@@ -1,15 +1,16 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 export async function proxy(request: NextRequest) {
-	return NextResponse.redirect(new URL("/login", request.url));
+	const pathname = request.nextUrl.pathname;
+	if (pathname === "/auth" && request.cookies.get("session_id"))
+		return NextResponse.redirect(new URL("/", request.url));
+	if (pathname !== "/auth" && !request.cookies.get("session_id")) {
+		const url = new URL(`/auth?state=${encodeURIComponent(request.nextUrl.pathname)}`, request.url);
+		return NextResponse.redirect(url);
+	}
+	return NextResponse.next();
 }
 
 export const config = {
-	matcher: [
-		{
-			source: "/profile/:path*",
-			locale: false,
-			missing: [{ type: "cookie", key: "session_id" }],
-		},
-	],
+	matcher: ["/profile/:path*", "/auth"],
 };

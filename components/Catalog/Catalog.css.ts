@@ -1,12 +1,12 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export const Content = styled.div<{ $active?: boolean; $basket?: boolean }>`
+export const Content = styled.div<{ $active?: boolean }>`
     position: absolute;
     left: 15px;
     top: 85px;
 
-    width: ${({ $basket }) => ($basket ? "calc(100% - 30px - 20dvw - 15px)" : "calc(100% - 30px)")};
+    width: calc(100% - 30px);
     height: ${(props) => (props.$active ? "40dvh" : "0")};
     opacity: ${(props) => (props.$active ? 1 : 0)};
 

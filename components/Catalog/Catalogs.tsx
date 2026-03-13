@@ -11,7 +11,7 @@ const Catalog = () => {
 	const pathname = usePathname();
 
 	const { categories, active: activeCategory, activeSubCategories, setActive: setActiveCategory } = useCategories();
-	const { catalog, basket } = useModals();
+	const { catalog } = useModals();
 
 	useEffect(() => {
 		const paths = pathname.split("/").filter((p) => p);
@@ -21,7 +21,7 @@ const Catalog = () => {
 	}, [pathname, activeCategory, setActiveCategory]);
 
 	return (
-		<Content $active={catalog} $basket={basket}>
+		<Content $active={catalog}>
 			<ContentWrapper>
 				<Categories>
 					{categories.map((category) => (

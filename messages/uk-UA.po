@@ -6,6 +6,58 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
+#: app/auth/page.tsx:46
+msgctxt "auth"
+msgid "i/AQd8"
+msgstr ""
+
+#: app/auth/page.tsx:46
+msgctxt "auth"
+msgid "yQNhoD"
+msgstr ""
+
+#: app/auth/page.tsx:48
+msgctxt "auth"
+msgid "3WAh8W"
+msgstr ""
+
+#: app/auth/page.tsx:54
+#: app/auth/page.tsx:72
+msgctxt "auth"
+msgid "jdJhOL"
+msgstr ""
+
+#: app/auth/page.tsx:61
+#: app/auth/page.tsx:79
+msgctxt "auth"
+msgid "h2vipu"
+msgstr ""
+
+#: app/auth/page.tsx:68
+msgctxt "auth"
+msgid "yk4PT9"
+msgstr ""
+
+#: app/auth/page.tsx:75
+msgctxt "auth"
+msgid "qITzR1"
+msgstr ""
+
+#: app/auth/page.tsx:86
+msgctxt "auth"
+msgid "cyRU1N"
+msgstr ""
+
+#: app/auth/page.tsx:89
+msgctxt "auth"
+msgid "jm/spn"
+msgstr ""
+
+#: app/auth/page.tsx:93
+msgctxt "auth"
+msgid "odXlk8"
+msgstr ""
+
 #: app/profile/countries/page.tsx:19
 msgctxt "profile"
 msgid "VdXF7G"
@@ -26,10 +78,25 @@ msgctxt "profile"
 msgid "smWqVf"
 msgstr "Очікує першу покупку"
 
-#: app/profile/page.tsx:13
+#: app/profile/page.tsx:16
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Паспорт мандрівника Hermes"
+
+#: app/profile/page.tsx:26
+msgctxt "profile"
+msgid "rkpUPx"
+msgstr ""
+
+#: app/profile/page.tsx:30
+msgctxt "profile"
+msgid "hJZwTS"
+msgstr ""
+
+#: app/profile/page.tsx:34
+msgctxt "profile"
+msgid "jdJhOL"
+msgstr ""
 
 #: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"

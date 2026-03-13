@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { Montserrat_Alternates } from "next/font/google";
 
-import Basket from "@/components/Basket/Basket";
 import Catalog from "@/components/Catalog/Catalogs";
 import Providers from "@/components/Providers";
 import ServerProviders from "@/components/ServerProviders";
@@ -39,7 +38,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 							<Main>
 								<TopBar />
 								<Catalog />
-								<Basket />
 								{children}
 							</Main>
 						</Providers>

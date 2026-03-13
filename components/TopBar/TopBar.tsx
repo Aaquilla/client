@@ -25,7 +25,7 @@ const TopBar = () => {
 		setLocaleCookie(locale);
 	};
 
-	const { catalog, setCatalog, basket, setBasket } = useModals();
+	const { catalog, setCatalog } = useModals();
 
 	return (
 		<Content>
@@ -44,9 +44,9 @@ const TopBar = () => {
 					<button type="button">{t("Search")}</button>
 				</Center>
 				<Right>
-					<button type="button" aria-label={t("Basket")} onClick={() => setBasket(!basket)}>
+					<Link href="/basket" aria-label={t("Basket")}>
 						<ShoppingBasket size={25} strokeWidth={1} absoluteStrokeWidth />
-					</button>
+					</Link>
 					<Link href="/profile" aria-label={t("Profile")}>
 						<CircleUserRound size={25} strokeWidth={1} absoluteStrokeWidth />
 					</Link>
