@@ -42,10 +42,8 @@ const page = () => {
 
 	useEffect(() => {
 		const handler = (e: MessageEvent) => {
-			console.log(e.data);
 			if ("access_token" in e.data) {
 				const { userinfo } = jwt.decode(e.data.access_token) as any;
-				console.log(userinfo);
 				setUser({
 					email: userinfo.email,
 					fullName: userinfo.full_name,

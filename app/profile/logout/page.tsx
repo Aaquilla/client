@@ -2,10 +2,12 @@
 
 import { useEffect } from "react";
 
+import host from "@/lib";
+
 const page = () => {
 	useEffect(() => {
 		localStorage.clear();
-		fetch("/api/logout", { credentials: "include" }).then(() => {
+		host.get("/users/auth/logout").then(() => {
 			window.location.replace("/");
 		});
 	}, []);
