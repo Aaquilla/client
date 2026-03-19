@@ -6,37 +6,37 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: app/auth/page.tsx:67
+#: app/auth/page.tsx:69
 msgctxt "auth"
 msgid "i/AQd8"
 msgstr "Enter login details"
 
-#: app/auth/page.tsx:68
+#: app/auth/page.tsx:70
 msgctxt "auth"
 msgid "3WAh8W"
 msgstr "You will be sent an SMS message with a confirmation code."
 
-#: app/auth/page.tsx:72
+#: app/auth/page.tsx:74
 msgctxt "auth"
 msgid "jdJhOL"
 msgstr "Phone number"
 
-#: app/auth/page.tsx:86
+#: app/auth/page.tsx:88
 msgctxt "auth"
 msgid "h2vipu"
 msgstr "Code"
 
-#: app/auth/page.tsx:92
+#: app/auth/page.tsx:94
 msgctxt "auth"
 msgid "+5wHU3"
 msgstr "Continue with"
 
-#: app/auth/page.tsx:104
+#: app/auth/page.tsx:106
 msgctxt "auth"
 msgid "lzgH40"
 msgstr "Google"
 
-#: app/auth/page.tsx:108
+#: app/auth/page.tsx:110
 msgctxt "auth"
 msgid "odXlk8"
 msgstr "Log in"
