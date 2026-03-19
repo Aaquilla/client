@@ -6,57 +6,40 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: app/auth/page.tsx:46
+#: app/auth/page.tsx:67
 msgctxt "auth"
 msgid "i/AQd8"
-msgstr ""
-
-#: app/auth/page.tsx:46
-msgctxt "auth"
-msgid "yQNhoD"
-msgstr ""
-
-#: app/auth/page.tsx:48
-msgctxt "auth"
-msgid "3WAh8W"
-msgstr ""
-
-#: app/auth/page.tsx:54
-#: app/auth/page.tsx:72
-msgctxt "auth"
-msgid "jdJhOL"
-msgstr ""
-
-#: app/auth/page.tsx:61
-#: app/auth/page.tsx:79
-msgctxt "auth"
-msgid "h2vipu"
-msgstr ""
+msgstr "Введіть дані для входу"
 
 #: app/auth/page.tsx:68
 msgctxt "auth"
-msgid "yk4PT9"
-msgstr ""
+msgid "3WAh8W"
+msgstr "Вам буде надіслано SMS-повідомлення з кодом підтвердження."
 
-#: app/auth/page.tsx:75
+#: app/auth/page.tsx:72
 msgctxt "auth"
-msgid "qITzR1"
-msgstr ""
+msgid "jdJhOL"
+msgstr "Номер телефону"
 
 #: app/auth/page.tsx:86
 msgctxt "auth"
-msgid "cyRU1N"
-msgstr ""
+msgid "h2vipu"
+msgstr "Код"
 
-#: app/auth/page.tsx:89
+#: app/auth/page.tsx:92
 msgctxt "auth"
-msgid "jm/spn"
-msgstr ""
+msgid "+5wHU3"
+msgstr "Продовжити з"
 
-#: app/auth/page.tsx:93
+#: app/auth/page.tsx:104
+msgctxt "auth"
+msgid "lzgH40"
+msgstr "Google"
+
+#: app/auth/page.tsx:108
 msgctxt "auth"
 msgid "odXlk8"
-msgstr ""
+msgstr "Увійти"
 
 #: app/profile/countries/page.tsx:19
 msgctxt "profile"
@@ -78,25 +61,10 @@ msgctxt "profile"
 msgid "smWqVf"
 msgstr "Очікує першу покупку"
 
-#: app/profile/page.tsx:16
+#: app/profile/page.tsx:13
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Паспорт мандрівника Hermes"
-
-#: app/profile/page.tsx:26
-msgctxt "profile"
-msgid "rkpUPx"
-msgstr ""
-
-#: app/profile/page.tsx:30
-msgctxt "profile"
-msgid "hJZwTS"
-msgstr ""
-
-#: app/profile/page.tsx:34
-msgctxt "profile"
-msgid "jdJhOL"
-msgstr ""
 
 #: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"

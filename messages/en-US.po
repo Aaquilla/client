@@ -6,54 +6,37 @@ msgstr ""
 "X-Generator: next-intl\n"
 "X-Crowdin-SourceKey: msgstr\n"
 
-#: app/auth/page.tsx:46
+#: app/auth/page.tsx:67
 msgctxt "auth"
 msgid "i/AQd8"
 msgstr "Enter login details"
 
-#: app/auth/page.tsx:46
-msgctxt "auth"
-msgid "yQNhoD"
-msgstr "Enter register details"
-
-#: app/auth/page.tsx:48
+#: app/auth/page.tsx:68
 msgctxt "auth"
 msgid "3WAh8W"
 msgstr "You will be sent an SMS message with a confirmation code."
 
-#: app/auth/page.tsx:54
 #: app/auth/page.tsx:72
 msgctxt "auth"
 msgid "jdJhOL"
 msgstr "Phone number"
 
-#: app/auth/page.tsx:61
-#: app/auth/page.tsx:79
+#: app/auth/page.tsx:86
 msgctxt "auth"
 msgid "h2vipu"
 msgstr "Code"
 
-#: app/auth/page.tsx:68
+#: app/auth/page.tsx:92
 msgctxt "auth"
-msgid "yk4PT9"
-msgstr "Full name"
+msgid "+5wHU3"
+msgstr "Continue with"
 
-#: app/auth/page.tsx:75
+#: app/auth/page.tsx:104
 msgctxt "auth"
-msgid "qITzR1"
-msgstr "send"
+msgid "lzgH40"
+msgstr "Google"
 
-#: app/auth/page.tsx:86
-msgctxt "auth"
-msgid "cyRU1N"
-msgstr "Forgot your password?"
-
-#: app/auth/page.tsx:89
-msgctxt "auth"
-msgid "jm/spn"
-msgstr "Reset"
-
-#: app/auth/page.tsx:93
+#: app/auth/page.tsx:108
 msgctxt "auth"
 msgid "odXlk8"
 msgstr "Log in"
@@ -78,25 +61,10 @@ msgctxt "profile"
 msgid "smWqVf"
 msgstr "Waiting for the first purchase"
 
-#: app/profile/page.tsx:16
+#: app/profile/page.tsx:13
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Hermes Traveler's Passport"
-
-#: app/profile/page.tsx:26
-msgctxt "profile"
-msgid "rkpUPx"
-msgstr "First and last name"
-
-#: app/profile/page.tsx:30
-msgctxt "profile"
-msgid "hJZwTS"
-msgstr "Email address"
-
-#: app/profile/page.tsx:34
-msgctxt "profile"
-msgid "jdJhOL"
-msgstr "Phone number"
 
 #: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"
