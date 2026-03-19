@@ -63,6 +63,10 @@ export const Buttons = styled.div`
     div {
         display: flex;
         flex-direction: column;
+        & > button {
+            all: unset;
+            cursor: pointer;
+        }
     }
     button {
         padding: 10px 25px;
