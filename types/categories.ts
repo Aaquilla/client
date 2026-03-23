@@ -3,7 +3,7 @@ import z from "zod";
 export const Category = z.object({
 	id: z.number(),
 	name: z.string(),
-	image_url: z.string().nullable(),
+	picture: z.string().nullable(),
 	category_id: z.number().nullable(),
 	get categories() {
 		return z.array(Category);

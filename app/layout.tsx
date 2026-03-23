@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { Montserrat_Alternates } from "next/font/google";
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 	return (
 		<html lang={locale}>
+			<Analytics />
 			<head>
 				<meta name="robots" content="noindex, nofollow" />
 			</head>

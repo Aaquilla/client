@@ -33,7 +33,7 @@ const page = () => {
 				email: userinfo.email,
 				fullName: userinfo.full_name,
 				phoneNumber: userinfo.phone_number,
-				imageUrl: userinfo.image_url,
+				imageUrl: userinfo.picture,
 			});
 			setAccessToken(data.access_token);
 			router.replace(searchParams.get("state") || "/");
@@ -48,7 +48,7 @@ const page = () => {
 					email: userinfo.email,
 					fullName: userinfo.full_name,
 					phoneNumber: userinfo.phone_number,
-					imageUrl: userinfo.image_url,
+					imageUrl: userinfo.picture,
 				});
 				setAccessToken(e.data.access_token);
 				router.push(searchParams.get("state") || "/");

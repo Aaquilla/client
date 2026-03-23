@@ -30,8 +30,8 @@ const page = () => {
 					data.map((r) => (
 						<Item key={r.id}>
 							<div className="image">
-								{r.image_url && (
-									<Image src={r.image_url} width={34} height={34} alt="" unoptimized={true} />
+								{r.picture && (
+									<Image src={r.picture} width={34} height={34} alt="" unoptimized={true} />
 								)}
 							</div>
 							<div>{r.full_name}</div>
