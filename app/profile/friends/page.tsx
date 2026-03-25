@@ -12,7 +12,7 @@ const page = () => {
 	const { data, isSuccess } = useQuery({
 		queryKey: ["friends"],
 		queryFn: async () => await getReferrals(),
-		staleTime: 60000 * 3,
+		staleTime: 3 * 60 * 1000,
 	});
 
 	return (
@@ -30,9 +30,13 @@ const page = () => {
 					data.map((r) => (
 						<Item key={r.id}>
 							<div className="image">
-								{r.picture && (
-									<Image src={r.picture} width={34} height={34} alt="" unoptimized={true} />
-								)}
+								<Image
+									src={r.picture ? `${process.env.NEXT_PUBLIC_FILES_URL}/${r.picture}` : "/logo.png"}
+									width={34}
+									height={34}
+									alt=""
+									unoptimized={true}
+								/>
 							</div>
 							<div>{r.full_name}</div>
 							<div className="status">{t("Waiting for the first purchase")}</div>
