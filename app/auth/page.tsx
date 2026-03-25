@@ -1,6 +1,5 @@
 "use client";
 
-import * as jwt from "jsonwebtoken";
 import { useExtracted } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -12,7 +11,7 @@ import { Buttons, Content, Form, FormContent, FormInfo, FormLabel } from "./page
 const page = () => {
 	const t = useExtracted("auth");
 
-	const { setAccessToken, setUser } = useUser();
+	const { setAccessToken } = useUser();
 	const router = useRouter();
 	const searchParams = useSearchParams();
 
@@ -21,20 +20,13 @@ const page = () => {
 	const sendCode = async () => {
 		await host.post("/users/auth/code", { phone_number: phone });
 	};
-	const onSubmit = async (e?: React.SubmitEvent<HTMLFormElement>) => {
-		e?.preventDefault();
+	const onSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+		e.preventDefault();
 
-		const formData = new FormData(e?.currentTarget || formRef.current!);
+		const formData = new FormData(e.currentTarget);
 		const json = Object.fromEntries(formData.entries());
 		const { data } = await host.post(`/users/auth/login`, json);
 		if ("access_token" in data) {
-			const { userinfo } = jwt.decode(data.access_token) as any;
-			setUser({
-				email: userinfo.email,
-				fullName: userinfo.full_name,
-				phoneNumber: userinfo.phone_number,
-				imageUrl: userinfo.picture,
-			});
 			setAccessToken(data.access_token);
 			router.replace(searchParams.get("state") || "/");
 		}
@@ -43,13 +35,6 @@ const page = () => {
 	useEffect(() => {
 		const handler = (e: MessageEvent) => {
 			if ("access_token" in e.data) {
-				const { userinfo } = jwt.decode(e.data.access_token) as any;
-				setUser({
-					email: userinfo.email,
-					fullName: userinfo.full_name,
-					phoneNumber: userinfo.phone_number,
-					imageUrl: userinfo.picture,
-				});
 				setAccessToken(e.data.access_token);
 				router.push(searchParams.get("state") || "/");
 			}
@@ -58,7 +43,7 @@ const page = () => {
 		window.addEventListener("message", handler);
 
 		return () => window.removeEventListener("message", handler);
-	}, [searchParams, router, setAccessToken, setUser]);
+	}, [searchParams, router, setAccessToken]);
 
 	return (
 		<Content>
