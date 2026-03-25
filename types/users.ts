@@ -5,5 +5,5 @@ export const User = z.object({
 	full_name: z.string(),
 	picture: z.string().nullable(),
 	email: z.string().optional(),
-	phone_number: z.string().optional(),
+	phone_number: z.string().nullable(),
 });
