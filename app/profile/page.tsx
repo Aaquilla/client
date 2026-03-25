@@ -5,6 +5,7 @@ import { MapPin } from "lucide-react";
 import { useExtracted } from "next-intl";
 import Image from "next/image";
 import type React from "react";
+import { useEffect, useState } from "react";
 
 import { getProfile, updateProfile } from "@/lib/user";
 import { AvatarSection, Content, Form, FormLabel, FormSection, PassportHeader } from "./page.css";
@@ -27,13 +28,19 @@ const ProfilePage = () => {
 		if (file) URL.createObjectURL(file);
 	};
 
+	const [values, setValues] = useState({ full_name: "", email: "", phone_number: "" });
+	const onChange = <K extends keyof typeof values>(key: K, value: (typeof values)[K]) => {
+		setValues((prev) => ({ ...prev, [key]: value }));
+	};
 	const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const formData = new FormData(e.currentTarget);
-		const json = Object.fromEntries(formData.entries());
-
-		mutation.mutate(json);
+		mutation.mutate(values);
 	};
+
+	useEffect(() => {
+		if (!isSuccess) return;
+		setValues({ full_name: data.full_name, email: data.email || "", phone_number: data.phone_number || "" });
+	}, [data, isSuccess]);
 
 	return (
 		<Content>
@@ -59,17 +66,32 @@ const ProfilePage = () => {
 						<FormSection>
 							<FormLabel>
 								{t("Full name")}
-								<input type="text" name="full_name" defaultValue={data.full_name} />
+								<input
+									type="text"
+									name="full_name"
+									value={values.full_name}
+									onChange={(e) => onChange("full_name", e.target.value)}
+								/>
 							</FormLabel>
 
 							<FormLabel>
 								{t("Email address")}
-								<input type="email" name="email" defaultValue={data.email} />
+								<input
+									type="email"
+									name="email"
+									value={values.email}
+									onChange={(e) => onChange("email", e.target.value)}
+								/>
 							</FormLabel>
 
 							<FormLabel>
 								{t("Phone number")}
-								<input type="tel" name="phone_number" defaultValue={data.phone_number || ""} />
+								<input
+									type="tel"
+									name="phone_number"
+									value={values.phone_number}
+									onChange={(e) => onChange("phone_number", e.target.value)}
+								/>
 							</FormLabel>
 
 							<button type="submit">{t("Save")}</button>

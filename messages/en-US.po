@@ -56,37 +56,37 @@ msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Get +50 miles and coffee after your friend makes their first purchase for an amount of 150 UAH or more."
 
-#: app/profile/friends/page.tsx:38
+#: app/profile/friends/page.tsx:42
 msgctxt "profile"
 msgid "smWqVf"
 msgstr "Waiting for the first purchase"
 
-#: app/profile/page.tsx:30
+#: app/profile/page.tsx:45
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Hermes Traveler's Passport"
 
-#: app/profile/page.tsx:42
+#: app/profile/page.tsx:57
 msgctxt "profile"
 msgid "VnXp8Z"
 msgstr "Avatar"
 
-#: app/profile/page.tsx:48
+#: app/profile/page.tsx:63
 msgctxt "profile"
 msgid "yk4PT9"
 msgstr "Full name"
 
-#: app/profile/page.tsx:53
+#: app/profile/page.tsx:74
 msgctxt "profile"
 msgid "hJZwTS"
 msgstr "Email address"
 
-#: app/profile/page.tsx:58
+#: app/profile/page.tsx:85
 msgctxt "profile"
 msgid "jdJhOL"
 msgstr "Phone number"
 
-#: app/profile/page.tsx:62
+#: app/profile/page.tsx:95
 msgctxt "profile"
 msgid "jvo0vs"
 msgstr "Save"
