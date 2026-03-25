@@ -2,7 +2,7 @@ import { Countries } from "@/types/countries";
 import { authHost } from ".";
 
 export const getCountries = async (locale: string) => {
-	const data = await fetch(`${process.env.BACKEND_URL}/countries`, {
+	const data = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/countries`, {
 		headers: { "Accept-Language": locale },
 		next: { revalidate: 3600, tags: ["countries"] },
 	});
