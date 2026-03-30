@@ -53,8 +53,8 @@ export const Form = styled.form`
 export const AvatarSection = styled.div`
   position: relative;
 
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   
   display: flex;
   justify-content: center;
