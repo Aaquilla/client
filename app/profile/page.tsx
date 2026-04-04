@@ -1,97 +1,27 @@
-"use client";
-
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { MapPin } from "lucide-react";
-import { useExtracted } from "next-intl";
-import Image from "next/image";
-import type React from "react";
-import { useRef } from "react";
+import { getExtracted } from "next-intl/server";
 
-import { getProfile, updateProfile } from "@/lib/user";
-import { AvatarSection, Content, Form, FormLabel, FormSection, PassportHeader } from "./page.css";
+import ProfileForm from "@/components/ProfileForm/ProfileForm";
+import { Content, PassportHeader } from "./page.css";
 
-const ProfilePage = () => {
-	const t = useExtracted("profile");
-
-	const query = useQueryClient();
-	const { data, isSuccess } = useQuery({
-		queryKey: ["profile"],
-		queryFn: async () => await getProfile(),
-	});
-	const mutation = useMutation({
-		mutationFn: async (body: FormData) => await updateProfile(body),
-		onSuccess: () => query.invalidateQueries({ queryKey: ["profile"] }),
-	});
-
-	const avatarRef = useRef<HTMLImageElement>(null);
-	const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const file = event.target.files?.[0];
-		if (file && avatarRef.current) avatarRef.current.src = URL.createObjectURL(file);
-	};
-
-	const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		const formData = new FormData(e.currentTarget);
-		for (const [key, value] of formData) {
-			console.log(`${key}: ${value}`);
-		}
-		mutation.mutate(formData);
-	};
+const page = async () => {
+	const t = await getExtracted("profile");
 
 	return (
 		<Content>
-			{isSuccess && (
-				<>
-					<PassportHeader>
-						<h2>{t("Hermes Traveler's Passport")}</h2>
-						<div className="badges">
-							<button type="button">Турист</button>
-							<button type="button">
-								<MapPin size={16} className="icon" />
-								<span>50</span>
-							</button>
-						</div>
-					</PassportHeader>
-
-					<Form onSubmit={onSubmit}>
-						<AvatarSection>
-							<Image
-								src={
-									data.picture ? `${process.env.NEXT_PUBLIC_FILES_URL}/${data.picture}` : "/logo.png"
-								}
-								fill
-								alt={t("Avatar")}
-								loading="eager"
-								sizes="280x280"
-								unoptimized
-								ref={avatarRef}
-							/>
-							<input type="file" name="picture" accept="image/*" onChange={handleAvatarChange} />
-						</AvatarSection>
-
-						<FormSection>
-							<FormLabel>
-								{t("Full name")}
-								<input type="text" name="full_name" defaultValue={data.full_name || undefined} />
-							</FormLabel>
-
-							<FormLabel>
-								{t("Email address")}
-								<input type="email" name="email" defaultValue={data.email || undefined} />
-							</FormLabel>
-
-							<FormLabel>
-								{t("Phone number")}
-								<input type="tel" name="phone_number" defaultValue={data.phone_number || undefined} />
-							</FormLabel>
-
-							<button type="submit">{t("Save")}</button>
-						</FormSection>
-					</Form>
-				</>
-			)}
+			<PassportHeader>
+				<h2>{t("Hermes Traveler's Passport")}</h2>
+				<div className="badges">
+					<button type="button">Турист</button>
+					<button type="button">
+						<MapPin size={16} className="icon" />
+						<span>50</span>
+					</button>
+				</div>
+			</PassportHeader>
+			<ProfileForm />
 		</Content>
 	);
 };
 
-export default ProfilePage;
+export default page;
