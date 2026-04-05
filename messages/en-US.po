@@ -41,6 +41,31 @@ msgctxt "auth"
 msgid "odXlk8"
 msgstr "Log in"
 
+#: app/profile/coffee/page.tsx:30
+msgctxt "profile"
+msgid "pKaBty"
+msgstr "Promotion 6 + 1"
+
+#: app/profile/coffee/page.tsx:31
+msgctxt "profile"
+msgid "3cgiew"
+msgstr "Buy 6 coffees and get the 7th one free."
+
+#: app/profile/coffee/page.tsx:58
+msgctxt "profile"
+msgid "kCPl0r"
+msgstr "Collect"
+
+#: app/profile/coffee/page.tsx:69
+msgctxt "profile"
+msgid "wUYhEQ"
+msgstr "Free coffees"
+
+#: app/profile/coffee/page.tsx:70
+msgctxt "profile"
+msgid "lKFP19"
+msgstr "Enter the code at the checkout when purchasing coffee and get it for free."
+
 #: app/profile/countries/page.tsx:20
 msgctxt "profile"
 msgid "VdXF7G"

@@ -41,6 +41,31 @@ msgctxt "auth"
 msgid "odXlk8"
 msgstr "Увійти"
 
+#: app/profile/coffee/page.tsx:30
+msgctxt "profile"
+msgid "pKaBty"
+msgstr ""
+
+#: app/profile/coffee/page.tsx:31
+msgctxt "profile"
+msgid "3cgiew"
+msgstr ""
+
+#: app/profile/coffee/page.tsx:58
+msgctxt "profile"
+msgid "kCPl0r"
+msgstr ""
+
+#: app/profile/coffee/page.tsx:69
+msgctxt "profile"
+msgid "wUYhEQ"
+msgstr ""
+
+#: app/profile/coffee/page.tsx:70
+msgctxt "profile"
+msgid "lKFP19"
+msgstr ""
+
 #: app/profile/countries/page.tsx:20
 msgctxt "profile"
 msgid "VdXF7G"

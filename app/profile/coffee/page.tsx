@@ -1,40 +1,36 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
+import { Lock } from "lucide-react";
+import { useExtracted } from "next-intl";
+import Image from "next/image";
+
+import { getCoffee } from "@/lib/coffee";
 import {
-	ActionButton,
 	Card,
-	ClaimButton,
 	Content,
 	CounterBadge,
 	FreeCoffeeGrid,
 	FreeCoffeeItem,
 	HeaderInfo,
-	NodeImage,
 	NodeWrapper,
 	TimelineContainer,
 	TimelineLine,
 } from "./page.css";
 
 const CoffeePassportPage = () => {
-	const timelineNodes = [
-		{ id: 1, active: true, top: "25%", left: "5%" },
-		{ id: 2, active: true, top: "75%", left: "20%" },
-		{ id: 3, active: false, top: "25%", left: "35%" },
-		{ id: 4, active: false, top: "75%", left: "50%" },
-		{ id: 5, active: false, top: "25%", left: "65%" },
-		{ id: 6, active: false, top: "75%", left: "80%" },
-		{ id: 7, active: false, top: "25%", left: "95%", large: true },
-	];
+	const t = useExtracted("profile");
+	const { data } = useQuery({ queryKey: ["coffee"], queryFn: async () => await getCoffee() });
 
 	return (
 		<Content>
 			<Card>
 				<HeaderInfo>
 					<div>
-						<h2>Акція 6 + 1</h2>
-						<p>Купіть 6 кав та отримайте 7-у в подарунок.</p>
+						<h2>{t("Promotion 6 + 1")}</h2>
+						<p>{t("Buy 6 coffees and get the 7th one free.")}</p>
 					</div>
-					<CounterBadge>2/6</CounterBadge>
+					<CounterBadge>{6 - (data?.to_next_bonus || 0)}/6</CounterBadge>
 				</HeaderInfo>
 
 				<TimelineContainer>
@@ -42,15 +38,26 @@ const CoffeePassportPage = () => {
 						<polyline points="5,25 20,75 35,25 50,75 65,25 80,75 95,25" />
 					</TimelineLine>
 
-					{timelineNodes.map((node) => (
-						<NodeWrapper key={node.id} $top={node.top} $left={node.left}>
-							<NodeImage
-								src={node.active ? "/coffee/Coffee.png" : "/coffee/CoffeeClosed.png"}
+					{[1, 2, 3, 4, 5, 6, 7].map((i) => (
+						<NodeWrapper
+							key={crypto.randomUUID()}
+							$top={i % 2 === 0 ? "75%" : "25%"}
+							$left={`${(i - 1) * 15 + 5}%`}
+							$closed={i > 6 - (data?.to_next_bonus || 0)}
+						>
+							<Image
+								src={"/coffee/coffee.webp"}
 								alt="Coffee Status"
-								$large={node.large}
+								{...(i === 7 ? { width: 80, height: 80 } : { width: 60, height: 60 })}
 							/>
-
-							{node.id === 7 && <ClaimButton disabled>Забрати</ClaimButton>}
+							<div className="mask">
+								<Lock />
+							</div>
+							{i === 7 && (
+								<button type="button" className="collect" disabled={true}>
+									{t("Collect")}
+								</button>
+							)}
 						</NodeWrapper>
 					))}
 				</TimelineContainer>
@@ -59,20 +66,15 @@ const CoffeePassportPage = () => {
 			<Card>
 				<HeaderInfo>
 					<div>
-						<h2>Безкоштовні кави</h2>
-						<p>Вкажіть код на касі, при покупці кави та отримайте її безкоштовно.</p>
+						<h2>{t("Free coffees")}</h2>
+						<p>{t("Enter the code at the checkout when purchasing coffee and get it for free.")}</p>
 					</div>
 				</HeaderInfo>
 
 				<FreeCoffeeGrid>
-					{[1, 2, 3, 4].map((item) => (
-						<FreeCoffeeItem key={item}>
-							<NodeImage
-								src="/coffee/GiftedCoffee.png"
-								alt="Free Coffee"
-								style={{ width: "85px", height: "85px" }}
-							/>
-							<ActionButton>Використати</ActionButton>
+					{(data?.unused || []).map((item) => (
+						<FreeCoffeeItem key={item.id}>
+							<Image src="/coffee/giftedcoffee.webp" alt="Free Coffee" width={80} height={80} />
 						</FreeCoffeeItem>
 					))}
 				</FreeCoffeeGrid>
