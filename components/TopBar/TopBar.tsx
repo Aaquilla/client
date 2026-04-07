@@ -44,10 +44,10 @@ const TopBar = () => {
 					<button type="button">{t("Search")}</button>
 				</Center>
 				<Right>
-					<Link href="/basket" aria-label={t("Basket")} prefetch>
+					<Link href="/basket" aria-label={t("Basket")} prefetch={false}>
 						<ShoppingBasket size={25} strokeWidth={1} absoluteStrokeWidth />
 					</Link>
-					<Link href="/profile" aria-label={t("Profile")} prefetch>
+					<Link href="/profile" aria-label={t("Profile")} prefetch={false}>
 						<CircleUserRound size={25} strokeWidth={1} absoluteStrokeWidth />
 					</Link>
 					<button
