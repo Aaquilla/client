@@ -3,7 +3,7 @@ const styles = {
 		padding: "20px 40px",
 	},
 
-	title: {
+	h2: {
 		fontFamily: "Gabriela, serif",
 		fontSize: "34px",
 		fontWeight: 400,
@@ -18,12 +18,21 @@ const styles = {
 	width: "100%",
     },
 
-    slide: {
+    sliderWrapper: {
+	position: "relative" as const,
 	width: "100%",
 	height: "80vh",
 	borderRadius: "20px",
-	position: "relative" as const,
 	overflow: "hidden",
+},
+
+	slide: {
+		position: "absolute" as const,
+		top: 0,
+		left: 0,
+		width: "100%",
+		height: "100%",
+		transition: "opacity 0.6s ease-in-out",
 	},
 
     arrowBtn: {
@@ -165,6 +174,7 @@ const styles = {
 	},
 
 	card: {
+	position: "relative" as const,
 	border: "1px solid #e5ddd5",
 	borderRadius: "24px",
 	padding: "20px",
@@ -176,13 +186,11 @@ const styles = {
 
 	badge: {
 		position: "absolute" as const,
-		top: "10px",
-		left: "10px",
 		background: "red",
 		color: "white",
 		padding: "4px 8px",
 		borderRadius: "5px",
-		fontSize: "12px",
+		fontSize: "14px",
 	},
 
 	image: {
@@ -270,12 +278,50 @@ const styles = {
 	alignItems: "center",
 	justifyContent: "center",
 	textDecoration: "none",
-},
+	},
 
 	icon: {
 	width: "20px",
 	height: "20px",
-},
+	},
+
+	countryImage: {
+	width: "100%",
+	height: "400px",
+	borderRadius: "24px",
+	marginTop: "20px",
+	},
+
+	catalogHeader: {
+	display: "flex",
+	justifyContent: "space-between",
+	alignItems: "center",
+	marginBottom: "30px",
+	},
+
+	catalogTitle: {
+		fontSize: "28px",
+		fontWeight: 500,
+	},
+
+	breadcrumbs: {
+		fontSize: "14px",
+		color: "#888",
+		marginTop: "5px",
+	},
+
+	catalogActions: {
+		display: "flex",
+		gap: "10px",
+	},
+
+	filterBtn: {
+		padding: "10px 16px",
+		borderRadius: "10px",
+		border: "1px solid #ddd",
+		background: "#fff",
+		cursor: "pointer",
+	},
 };
 
 export default styles;

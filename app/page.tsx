@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./page.css";
 import Link from "next/link";
 import { ShoppingBasket, Heart } from "lucide-react";
+import { useEffect } from "react";
 
 export default function Home() {
 	const slides = [
@@ -26,14 +27,19 @@ export default function Home() {
 		<main style={styles.main}>
 			{/* HERO */}
 			<section style={styles.hero}>
-				<div
-					style={{
-						...styles.slide,
-						backgroundImage: `url(${slides[current]})`,
-						backgroundSize: "cover",
-						backgroundPosition: "center",
-					}}
-				>
+				<div style={styles.sliderWrapper}>
+					{slides.map((slide, index) => (
+						<div
+							key={index}
+							style={{
+								...styles.slide,
+								backgroundImage: `url(${slide})`,
+								backgroundSize: "cover",
+								backgroundPosition: "center",
+								opacity: index === current ? 1 : 0,
+							}}
+						/>
+					))}
 				</div>
 
 				<div style={styles.controls}>
@@ -46,9 +52,10 @@ export default function Home() {
 							<span
 								key={i}
 								style={i === current ? styles.dotActive : styles.dot}
-							></span>
+							/>
 						))}
 					</div>
+
 
 					<button style={styles.arrowBtn} onClick={nextSlide}>
 						{">"}
@@ -59,62 +66,53 @@ export default function Home() {
 			{/* ПОПУЛЯРНІ КАТЕГОРІЇ */}
 			<section style={styles.section}>
 				<div style={styles.header}>
-					<h2 style={styles.title}>Популярні категорії</h2>
+					<h2>Популярні категорії</h2>
 					<a style={styles.link}>Переглянути всі →</a>
 				</div>
 
 				<div style={styles.categories}>
-					{Array.from({ length: 6 }).map((_, i) => (
-						<div key={i} style={styles.category}>
+				{Array.from({ length: 6 }).map((_, i) => (
+					<Link key={i} href="/catalog" style={{ textDecoration: "none" }}>
+						<div style={styles.category}>
 							<div style={styles.circle}></div>
 							<p>Категорія</p>
 						</div>
-					))}
+					</Link>
+				))}
 				</div>
 			</section>
 
 			{/* КРАЇНИ */}
 			<section style={styles.section}>
-				<h2 style={styles.title}>Країни місяця</h2>
+				<h2>Країни місяця</h2>
 
-				<div style={styles.mapBlock}>
-					<div style={styles.sideCircle}></div>
-
-					<div style={styles.centerCountry}>
-						<h3>ФРАНЦІЯ</h3>
-						<p>Опис країни</p>
-					</div>
-
-					<div style={styles.sideCircle}></div>
-				</div>
-
-				<div style={styles.tickets}>
-					{[1, 2, 3].map((i) => (
-						<div key={i} style={styles.ticket}>
-							✈ Київ → Париж
-							<p>Пропозиція</p>
-						</div>
-					))}
-				</div>
+				<div
+					style={{
+						...styles.countryImage,
+						backgroundImage: "url(/images/slide1.png)",
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+					}}
+				/>
 			</section>
 
 			{/* КУЛІНАРІЯ */}
 			<section style={styles.section}>
-				<div style={styles.header}>
-					<h2 style={styles.title}>Спробувати кулінарію світу</h2>
-					<a style={styles.link}>Переглянути всі →</a>
-				</div>
+			<div style={styles.header}>
+				<h2>Спробувати кулінарію світу</h2>
+				<a style={styles.link}>Переглянути всі →</a>
+			</div>
 
-				<div style={styles.categories}>
-					{["Італія", "Франція", "Японія", "Корея", "Китай", "Іспанія"].map(
-						(name, i) => (
-							<div key={i} style={styles.category}>
-								<div style={styles.circle}></div>
-								<p>{name}</p>
-							</div>
-						)
-					)}
-				</div>
+			<div style={styles.categories}>
+				{["Італія", "Франція", "Японія", "Корея", "Китай", "Іспанія"].map(
+				(name, i) => (
+					<Link key={i} href="/catalog" style={styles.category}>
+					<div style={styles.circle}></div>
+					<p>{name}</p>
+					</Link>
+				)
+				)}
+			</div>
 			</section>
 
 			{/* ТОВАРНІ БЛОКИ */}
@@ -126,7 +124,7 @@ export default function Home() {
 			].map((title, sectionIndex) => (
 				<section key={sectionIndex} style={styles.section}>
 					<div style={styles.header}>
-						<h2 style={styles.title}>{title}</h2>
+						<h2>{title}</h2>
 						<a style={styles.link}>Переглянути всі →</a>
 					</div>
 
