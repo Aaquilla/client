@@ -71,6 +71,11 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Мапа відкритих країн"
 
+#: app/profile/favorites/page.tsx:42
+msgctxt "profile"
+msgid "avWTtY"
+msgstr ""
+
 #: app/profile/friends/page.tsx:12
 msgctxt "profile"
 msgid "3s0ZWy"
@@ -80,6 +85,21 @@ msgstr "Запросіть друзів та отримайте бонуси!"
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Отримайте +50 миль і каву після того, як ваш друг зробить першу покупку на суму від 150 грн."
+
+#: app/profile/gallery/page.tsx:48
+msgctxt "profile"
+msgid "8J2O0X"
+msgstr ""
+
+#: app/profile/gallery/page.tsx:60
+msgctxt "profile"
+msgid "AsUhzU"
+msgstr ""
+
+#: app/profile/gallery/page.tsx:93
+msgctxt "profile"
+msgid "rragQb"
+msgstr ""
 
 #: app/profile/page.tsx:13
 msgctxt "profile"
