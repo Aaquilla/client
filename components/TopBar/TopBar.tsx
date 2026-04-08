@@ -34,7 +34,7 @@ const TopBar = () => {
 					<Logo href="/" aria-label={t("Shop")}>
 						<Image src="/logo.png" width={40} height={40} alt="" priority />
 					</Logo>
-					<button type="button" onClick={() => setCatalog(!catalog)}>
+					<button type="button" data-catalog-toggle="true" onClick={() => setCatalog(!catalog)}>
 						<LayoutGrid size={20} strokeWidth={1} absoluteStrokeWidth />
 						{t("Catalog")}
 					</button>

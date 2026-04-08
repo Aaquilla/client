@@ -1,44 +1,69 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import { useCategories, useModals } from "@/store";
 import { Categories, Category, Content, ContentWrapper, SubCategories, SubCategory } from "./Catalog.css";
 
 const Catalog = () => {
 	const pathname = usePathname();
+	const catalogRef = useRef<HTMLDivElement>(null);
 
-	const { categories, active: activeCategory, activeSubCategories, setActive: setActiveCategory } = useCategories();
-	const { catalog } = useModals();
+	const { categories, categoriesSet, active, setActive, activeSubCategories } = useCategories();
+	const { catalog, setCatalog } = useModals();
 
 	useEffect(() => {
-		const paths = pathname.split("/").filter((p) => p);
-		if (paths.length !== 0 && Number.isFinite(Number(paths[0])) && Number(paths[0]) !== activeCategory) {
-			setActiveCategory(Number(paths[0]));
-		}
-	}, [pathname, activeCategory, setActiveCategory]);
+		if (!pathname) return;
+		setCatalog(false);
+	}, [pathname, setCatalog]);
+
+	useEffect(() => {
+		const activeCategoryId = Number(pathname.split("/").at(-1));
+		const activeCategory = activeCategoryId ? categoriesSet[activeCategoryId] : null;
+		if (activeCategory) setActive(activeCategory.category_id ?? activeCategory.id);
+	}, [pathname, categoriesSet, setActive]);
+
+	useEffect(() => {
+		if (!catalog) return;
+
+		const onClickOutside = (e: MouseEvent) => {
+			if (!catalogRef.current || catalogRef.current.contains(e.target as Node)) return;
+
+			const target = e.target as Element | null;
+			if (target?.closest("[data-catalog-toggle='true']")) return;
+
+			setCatalog(false);
+		};
+
+		document.addEventListener("click", onClickOutside);
+
+		return () => {
+			document.removeEventListener("click", onClickOutside);
+		};
+	}, [catalog, setCatalog]);
 
 	return (
-		<Content $active={catalog}>
+		<Content $active={catalog} ref={catalogRef}>
 			<ContentWrapper>
 				<Categories>
-					{categories.map((category) => (
-						<Category key={category.id} $active={activeCategory === category.id}>
-							<Link href={`/${category.id}`} prefetch>
-								{category.name}
-							</Link>
-						</Category>
-					))}
+					{categories
+						.filter((c) => !c.category_id)
+						.map((category) => (
+							<Category key={category.id} $active={active === category.id}>
+								<button type="button" onClick={() => setActive(category.id)}>
+									{category.name}
+								</button>
+							</Category>
+						))}
 				</Categories>
 				<SubCategories>
 					{activeSubCategories.map((category) => (
 						<SubCategory
 							key={category.id}
 							prefetch
-							href={`/${category.category_id}/${category.id}`}
-							$active={pathname === `/${category.category_id}/${category.id}`}
+							href={`/${category.id}`}
+							$active={pathname === `/${category.id}`}
 						>
 							{category.name}
 						</SubCategory>

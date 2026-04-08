@@ -45,10 +45,7 @@ export const Categories = styled.ul`
 export const Category = styled.li<{ $active?: boolean }>`
     width: 100%;
     
-    a {
-        display: flex;
-        align-items: center;
-
+    button {
         padding: 0 20px;
 
         width: 100%;
@@ -60,7 +57,7 @@ export const Category = styled.li<{ $active?: boolean }>`
         color: ${(params) => (params.$active ? "#ffffff" : "unset")};
     }
 
-    &:hover a {
+    &:hover button {
         background: ${(props) => props.theme.colors.primary};
         color: #ffffff;
     }

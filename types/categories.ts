@@ -5,9 +5,6 @@ export const Category = z.object({
 	name: z.string(),
 	picture: z.string().nullable(),
 	category_id: z.number().nullable(),
-	get categories() {
-		return z.array(Category);
-	},
 });
 
 export const Categories = z.array(Category);
