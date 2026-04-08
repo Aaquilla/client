@@ -44,37 +44,37 @@ msgstr "Увійти"
 #: app/profile/coffee/page.tsx:30
 msgctxt "profile"
 msgid "pKaBty"
-msgstr ""
+msgstr "Акція 6 + 1"
 
 #: app/profile/coffee/page.tsx:31
 msgctxt "profile"
 msgid "3cgiew"
-msgstr ""
+msgstr "Купіть 6 кав та отримайте 7-у в подарунок."
 
 #: app/profile/coffee/page.tsx:58
 msgctxt "profile"
 msgid "kCPl0r"
-msgstr ""
+msgstr "Забрати"
 
 #: app/profile/coffee/page.tsx:69
 msgctxt "profile"
 msgid "wUYhEQ"
-msgstr ""
+msgstr "Безкоштовні кави"
 
 #: app/profile/coffee/page.tsx:70
 msgctxt "profile"
 msgid "lKFP19"
-msgstr ""
+msgstr "Вкажіть код на касі, при покупці кави та отримайте її безкоштовно."
 
 #: app/profile/countries/page.tsx:20
 msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Мапа відкритих країн"
 
-#: app/profile/favorites/page.tsx:42
+#: app/profile/favorites/page.tsx:45
 msgctxt "profile"
 msgid "avWTtY"
-msgstr ""
+msgstr "Поки що немає улюблених"
 
 #: app/profile/friends/page.tsx:12
 msgctxt "profile"
@@ -85,21 +85,6 @@ msgstr "Запросіть друзів та отримайте бонуси!"
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Отримайте +50 миль і каву після того, як ваш друг зробить першу покупку на суму від 150 грн."
-
-#: app/profile/gallery/page.tsx:48
-msgctxt "profile"
-msgid "8J2O0X"
-msgstr ""
-
-#: app/profile/gallery/page.tsx:60
-msgctxt "profile"
-msgid "AsUhzU"
-msgstr ""
-
-#: app/profile/gallery/page.tsx:93
-msgctxt "profile"
-msgid "rragQb"
-msgstr ""
 
 #: app/profile/page.tsx:13
 msgctxt "profile"

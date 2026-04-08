@@ -71,7 +71,7 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Open countries map"
 
-#: app/profile/favorites/page.tsx:42
+#: app/profile/favorites/page.tsx:45
 msgctxt "profile"
 msgid "avWTtY"
 msgstr "No favorites yet"
@@ -85,21 +85,6 @@ msgstr "Invite friends and get bonuses!"
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Get +50 miles and coffee after your friend makes their first purchase for an amount of 150 UAH or more."
-
-#: app/profile/gallery/page.tsx:48
-msgctxt "profile"
-msgid "8J2O0X"
-msgstr "Photo Gallery"
-
-#: app/profile/gallery/page.tsx:60
-msgctxt "profile"
-msgid "AsUhzU"
-msgstr "Add Photos"
-
-#: app/profile/gallery/page.tsx:93
-msgctxt "profile"
-msgid "rragQb"
-msgstr "No photos yet"
 
 #: app/profile/page.tsx:13
 msgctxt "profile"

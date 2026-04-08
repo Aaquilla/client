@@ -82,7 +82,6 @@ export const ProductTitle = styled.h3`
 	font-weight: 500;
 	margin: 0;
 	text-align: center;
-	color: ${({ theme }) => theme.colors.text};
 `;
 
 export const ProductPrice = styled.div`
@@ -124,7 +123,6 @@ export const DiscountBadge = styled.div`
 	position: absolute;
 	top: 8px;
 	left: 8px;
-	background: ${({ theme }) => theme.colors.error};
 	color: white;
 	padding: 4px 8px;
 	border-radius: 4px;

@@ -3,15 +3,20 @@
 import { Heart } from "lucide-react";
 import { useExtracted } from "next-intl";
 
-import { EmptyState, FavoritesContainer, FavoritesGrid, ProductCard, ProductImage, ProductInfo, ProductPrice, ProductTitle } from "./page.css";
+import {
+	EmptyState,
+	FavoritesContainer,
+	FavoritesGrid,
+	ProductCard,
+	ProductImage,
+	ProductInfo,
+	ProductPrice,
+	ProductTitle,
+} from "./page.css";
 
 const FavoritesPage = () => {
 	const t = useExtracted("profile");
-
-	// TODO: Получить избранные товары с бекенда
 	const favorites = [];
-
-	// Плейсхолдер товара для демонстрации
 	const placeholderProducts = [
 		{ id: 1, title: "Товар 1", price: "99.99" },
 		{ id: 2, title: "Товар 2", price: "149.99" },
@@ -21,9 +26,7 @@ const FavoritesPage = () => {
 	return (
 		<FavoritesContainer>
 			{favorites.length > 0 ? (
-				<FavoritesGrid>
-					{/* TODO: Отобразить карточки избранных товаров */}
-				</FavoritesGrid>
+				<FavoritesGrid></FavoritesGrid>
 			) : (
 				<>
 					<FavoritesGrid>
