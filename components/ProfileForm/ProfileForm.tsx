@@ -1,12 +1,14 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { Camera } from "lucide-react";
 import { useExtracted } from "next-intl";
 import Image from "next/image";
 import { useRef } from "react";
 
 import { getProfile, updateProfile } from "@/lib/user";
-import { AvatarSection, Form, FormLabel, FormSection } from "./ProfileForm.css";
+// Обязательно импортируем новые стили ImageContainer и PhotoFrameOverlay
+import { AvatarOverlay, AvatarSection, Form, FormLabel, FormSection, ImageContainer, PhotoFrameOverlay } from "./ProfileForm.css";
 
 const ProfileForm = () => {
 	const t = useExtracted("profile");
@@ -36,20 +38,33 @@ const ProfileForm = () => {
 		}
 		mutation.mutate(formData);
 	};
+    
 	return (
 		<Form onSubmit={onSubmit}>
 			<AvatarSection>
-				<Image
-					src={data?.picture ? `${process.env.NEXT_PUBLIC_FILES_URL}/${data.picture}` : "/logo.png"}
-					fill
-					alt={t("Avatar")}
-					sizes="280x280"
-					loading="eager"
-					unoptimized
-					ref={avatarRef}
-				/>
-				<input type="file" name="picture" accept="image/*" onChange={handleAvatarChange} />
+				{/* 1. Декоративная рамка на заднем плане (всю ширину 280x280) */}
+				<PhotoFrameOverlay />
+				
+				{/* 2. Контейнер самой фотки (меньше по размеру и идеально круглый) */}
+				<ImageContainer>
+					<Image
+						src={data?.picture ? `${process.env.NEXT_PUBLIC_FILES_URL}/${data.picture}` : "/logo.png"}
+						fill
+						style={{ objectFit: "cover" }}
+						alt={t("Avatar")}
+						sizes="200x200"
+						loading="eager"
+						unoptimized
+						ref={avatarRef}
+					/>
+					<AvatarOverlay>
+						<Camera size={32} style={{ marginBottom: "8px" }} />
+						<span>{t("Change")}</span>
+					</AvatarOverlay>
+					<input type="file" name="picture" accept="image/*" onChange={handleAvatarChange} />
+				</ImageContainer>
 			</AvatarSection>
+            
 			<FormSection>
 				<FormLabel>
 					{t("Full name")}

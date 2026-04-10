@@ -11,6 +11,7 @@ export const Items = styled.div`
 
     overflow-y: auto;
 `;
+
 export const Item = styled.div`
     display: flex;
     align-items: center;
@@ -24,7 +25,7 @@ export const Item = styled.div`
     
     & .status {
         font-size: 14px;
-        margin-left: auto
+        margin-left: auto; /* <-- Добавлена точка с запятой */
     }
 
     & .image {

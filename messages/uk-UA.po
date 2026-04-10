@@ -76,20 +76,150 @@ msgctxt "profile"
 msgid "avWTtY"
 msgstr "Поки що немає улюблених"
 
-#: app/profile/friends/page.tsx:12
+#: app/profile/friends/page.tsx:39
 msgctxt "profile"
 msgid "3s0ZWy"
 msgstr "Запросіть друзів та отримайте бонуси!"
 
-#: app/profile/friends/page.tsx:14
+#: app/profile/friends/page.tsx:41
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Отримайте +50 миль і каву після того, як ваш друг зробить першу покупку на суму від 150 грн."
 
-#: app/profile/page.tsx:13
+#: app/profile/friends/page.tsx:49
+msgctxt "profile"
+msgid "hYOE+U"
+msgstr "Запросити"
+
+#: app/profile/friends/page.tsx:63
+msgctxt "profile"
+msgid "G8P44K"
+msgstr "Запрошувальне посилання"
+
+#: app/profile/friends/page.tsx:73
+msgctxt "profile"
+msgid "p556q3"
+msgstr "Скопійовано"
+
+#: app/profile/friends/page.tsx:73
+msgctxt "profile"
+msgid "4l6vz1"
+msgstr "Копіювати"
+
+#: app/profile/page.tsx:38
+msgctxt "profile"
+msgid "bKVEJq"
+msgstr "Турист"
+
+#: app/profile/page.tsx:41
+msgctxt "profile"
+msgid "qpm860"
+msgstr "Курс миль: 1 миля = 100 грн із чеку замовлення"
+
+#: app/profile/page.tsx:42
+msgctxt "profile"
+msgid "S7fVY2"
+msgstr "Бонус на день народження"
+
+#: app/profile/page.tsx:46
+msgctxt "profile"
+msgid "mJN/zn"
+msgstr "Дослідник"
+
+#: app/profile/page.tsx:49
+msgctxt "profile"
+msgid "boENcR"
+msgstr "Курс миль: 2 милі = 100 грн із чеку замовлення"
+
+#: app/profile/page.tsx:50
+msgctxt "profile"
+msgid "C8OVSs"
+msgstr "Персональні пропозиції"
+
+#: app/profile/page.tsx:51
+msgctxt "profile"
+msgid "gY2nc9"
+msgstr "Подвійні милі на товари “Країна Місяця”"
+
+#: app/profile/page.tsx:55
+msgctxt "profile"
+msgid "9QAC3l"
+msgstr "Мандрівник"
+
+#: app/profile/page.tsx:58
+msgctxt "profile"
+msgid "s4bQeW"
+msgstr "Курс миль: 3 милі = 100 грн із чеку замовлення"
+
+#: app/profile/page.tsx:59
+msgctxt "profile"
+msgid "L6IpdY"
+msgstr "Знижки на імпортні позиції"
+
+#: app/profile/page.tsx:60
+msgctxt "profile"
+msgid "7BpCMx"
+msgstr "Безкоштовна тижнева кава"
+
+#: app/profile/page.tsx:64
+msgctxt "profile"
+msgid "qu568M"
+msgstr "Посол\nГермеса"
+
+#: app/profile/page.tsx:67
+msgctxt "profile"
+msgid "yNy2fp"
+msgstr "Курс миль: 4 милі = 100 грн із чеку замовлення"
+
+#: app/profile/page.tsx:68
+msgctxt "profile"
+msgid "0qbJMF"
+msgstr "Персональні знижки на обрані категорії"
+
+#: app/profile/page.tsx:69
+msgctxt "profile"
+msgid "0B9Rzi"
+msgstr "Участь у закритих подіях"
+
+#: app/profile/page.tsx:84
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Паспорт мандрівника Hermes"
+
+#: app/profile/page.tsx:108
+msgctxt "profile"
+msgid "pFm27r"
+msgstr "Поточний статус"
+
+#: app/profile/page.tsx:109
+msgctxt "profile"
+msgid "6vC4vS"
+msgstr "Отримано:"
+
+#: app/profile/page.tsx:134
+msgctxt "profile"
+msgid "ne4Y2Q"
+msgstr "Історія миль"
+
+#: app/profile/page.tsx:135
+msgctxt "profile"
+msgid "mCr2NR"
+msgstr "Поточна кількість активних миль"
+
+#: app/profile/page.tsx:136
+msgctxt "profile"
+msgid "/Kajqa"
+msgstr "Всього накопичено за попередній рік"
+
+#: app/profile/page.tsx:137
+msgctxt "profile"
+msgid "yKHY0p"
+msgstr "Всього накопичено за поточний рік"
+
+#: app/profile/page.tsx:142
+msgctxt "profile"
+msgid "xfP1jk"
+msgstr "Список бонусів статусу"
 
 #: components/FriendsList/FriendsList.tsx:34
 msgctxt "profile"
@@ -131,27 +261,32 @@ msgctxt "profile"
 msgid "C81/uG"
 msgstr "Вийти"
 
-#: components/ProfileForm/ProfileForm.tsx:45
+#: components/ProfileForm/ProfileForm.tsx:49
 msgctxt "profile"
 msgid "VnXp8Z"
 msgstr "Фото"
 
-#: components/ProfileForm/ProfileForm.tsx:55
+#: components/ProfileForm/ProfileForm.tsx:61
+msgctxt "profile"
+msgid "BY343C"
+msgstr "Змінити"
+
+#: components/ProfileForm/ProfileForm.tsx:68
 msgctxt "profile"
 msgid "yk4PT9"
 msgstr "Повне ім'я"
 
-#: components/ProfileForm/ProfileForm.tsx:60
+#: components/ProfileForm/ProfileForm.tsx:73
 msgctxt "profile"
 msgid "hJZwTS"
 msgstr "Адреса електронної пошти"
 
-#: components/ProfileForm/ProfileForm.tsx:65
+#: components/ProfileForm/ProfileForm.tsx:78
 msgctxt "profile"
 msgid "jdJhOL"
 msgstr "Номер телефону"
 
-#: components/ProfileForm/ProfileForm.tsx:69
+#: components/ProfileForm/ProfileForm.tsx:82
 msgctxt "profile"
 msgid "jvo0vs"
 msgstr "Зберегти"
