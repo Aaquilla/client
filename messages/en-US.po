@@ -76,20 +76,150 @@ msgctxt "profile"
 msgid "avWTtY"
 msgstr "No favorites yet"
 
-#: app/profile/friends/page.tsx:12
+#: app/profile/friends/page.tsx:39
 msgctxt "profile"
 msgid "3s0ZWy"
 msgstr "Invite friends and get bonuses!"
 
-#: app/profile/friends/page.tsx:14
+#: app/profile/friends/page.tsx:41
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Get +50 miles and coffee after your friend makes their first purchase for an amount of 150 UAH or more."
 
-#: app/profile/page.tsx:13
+#: app/profile/friends/page.tsx:49
+msgctxt "profile"
+msgid "hYOE+U"
+msgstr "Invite"
+
+#: app/profile/friends/page.tsx:63
+msgctxt "profile"
+msgid "G8P44K"
+msgstr "Invitation link"
+
+#: app/profile/friends/page.tsx:73
+msgctxt "profile"
+msgid "p556q3"
+msgstr "Copied"
+
+#: app/profile/friends/page.tsx:73
+msgctxt "profile"
+msgid "4l6vz1"
+msgstr "Copy"
+
+#: app/profile/page.tsx:38
+msgctxt "profile"
+msgid "bKVEJq"
+msgstr "Tourist"
+
+#: app/profile/page.tsx:41
+msgctxt "profile"
+msgid "qpm860"
+msgstr "Miles rate: 1 mile = 100 UAH from the order receipt"
+
+#: app/profile/page.tsx:42
+msgctxt "profile"
+msgid "S7fVY2"
+msgstr "Birthday bonus"
+
+#: app/profile/page.tsx:46
+msgctxt "profile"
+msgid "mJN/zn"
+msgstr "Explorer"
+
+#: app/profile/page.tsx:49
+msgctxt "profile"
+msgid "boENcR"
+msgstr "Miles rate: 2 miles = 100 UAH from the order receipt"
+
+#: app/profile/page.tsx:50
+msgctxt "profile"
+msgid "C8OVSs"
+msgstr "Personal offers"
+
+#: app/profile/page.tsx:51
+msgctxt "profile"
+msgid "gY2nc9"
+msgstr "Double miles on \"Moon Country\" products"
+
+#: app/profile/page.tsx:55
+msgctxt "profile"
+msgid "9QAC3l"
+msgstr "Traveler"
+
+#: app/profile/page.tsx:58
+msgctxt "profile"
+msgid "s4bQeW"
+msgstr "Miles rate: 3 miles = 100 UAH from the order receipt"
+
+#: app/profile/page.tsx:59
+msgctxt "profile"
+msgid "L6IpdY"
+msgstr "Discounts on imported items"
+
+#: app/profile/page.tsx:60
+msgctxt "profile"
+msgid "7BpCMx"
+msgstr "Free weekly coffee"
+
+#: app/profile/page.tsx:64
+msgctxt "profile"
+msgid "qu568M"
+msgstr "Hermes\nAmbassador"
+
+#: app/profile/page.tsx:67
+msgctxt "profile"
+msgid "yNy2fp"
+msgstr "Miles rate: 4 miles = 100 UAH from the order receipt"
+
+#: app/profile/page.tsx:68
+msgctxt "profile"
+msgid "0qbJMF"
+msgstr "Personal discounts on selected categories"
+
+#: app/profile/page.tsx:69
+msgctxt "profile"
+msgid "0B9Rzi"
+msgstr "Participation in closed events"
+
+#: app/profile/page.tsx:84
 msgctxt "profile"
 msgid "DgPFXk"
 msgstr "Hermes Traveler's Passport"
+
+#: app/profile/page.tsx:108
+msgctxt "profile"
+msgid "pFm27r"
+msgstr "Current status"
+
+#: app/profile/page.tsx:109
+msgctxt "profile"
+msgid "6vC4vS"
+msgstr "Received:"
+
+#: app/profile/page.tsx:134
+msgctxt "profile"
+msgid "ne4Y2Q"
+msgstr "Miles history"
+
+#: app/profile/page.tsx:135
+msgctxt "profile"
+msgid "mCr2NR"
+msgstr "Current number of active miles"
+
+#: app/profile/page.tsx:136
+msgctxt "profile"
+msgid "/Kajqa"
+msgstr "Total accumulated for the previous year"
+
+#: app/profile/page.tsx:137
+msgctxt "profile"
+msgid "yKHY0p"
+msgstr "Total accumulated for the current year"
+
+#: app/profile/page.tsx:142
+msgctxt "profile"
+msgid "xfP1jk"
+msgstr "List of bonuses for status"
 
 #: components/FriendsList/FriendsList.tsx:34
 msgctxt "profile"
@@ -131,27 +261,32 @@ msgctxt "profile"
 msgid "C81/uG"
 msgstr "Logout"
 
-#: components/ProfileForm/ProfileForm.tsx:45
+#: components/ProfileForm/ProfileForm.tsx:49
 msgctxt "profile"
 msgid "VnXp8Z"
 msgstr "Avatar"
 
-#: components/ProfileForm/ProfileForm.tsx:55
+#: components/ProfileForm/ProfileForm.tsx:61
+msgctxt "profile"
+msgid "BY343C"
+msgstr "Change"
+
+#: components/ProfileForm/ProfileForm.tsx:68
 msgctxt "profile"
 msgid "yk4PT9"
 msgstr "Full name"
 
-#: components/ProfileForm/ProfileForm.tsx:60
+#: components/ProfileForm/ProfileForm.tsx:73
 msgctxt "profile"
 msgid "hJZwTS"
 msgstr "Email address"
 
-#: components/ProfileForm/ProfileForm.tsx:65
+#: components/ProfileForm/ProfileForm.tsx:78
 msgctxt "profile"
 msgid "jdJhOL"
 msgstr "Phone number"
 
-#: components/ProfileForm/ProfileForm.tsx:69
+#: components/ProfileForm/ProfileForm.tsx:82
 msgctxt "profile"
 msgid "jvo0vs"
 msgstr "Save"
