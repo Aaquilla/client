@@ -141,14 +141,14 @@ export const QuantityBox = styled.div`
 
   button {
     padding: 10px 15px;
-    border-color: ${({ theme }) => theme.colors.secondary};
+    border-color: ${({ theme }) => theme.colors?.secondary || '#ddd'};
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.2s;
 
     &:hover:not(:disabled) {
-      border-color: ${({ theme }) => theme.colors.primary};
+      border-color: ${({ theme }) => theme.colors?.primary || '#433327'};
     }
 
     &:disabled {
@@ -168,7 +168,7 @@ export const QuantityBox = styled.div`
 
 export const RemoveButton = styled.button`
   padding: 10px;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors?.primary || '#433327'};
   border: none;
   border-radius: 50%;
 
@@ -470,5 +470,7 @@ export const ModalContent = styled.div`
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
+    display: block; /* Вирівнювання по центру */
+    margin: 0 auto; /* Вирівнювання по центру */
   }
 `;

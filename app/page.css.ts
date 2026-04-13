@@ -14,17 +14,17 @@ const styles = {
 	},
 
 	hero: {
-	marginTop: "40px",
-	width: "100%",
-    },
+		marginTop: "40px",
+		width: "100%",
+	},
 
-    sliderWrapper: {
-	position: "relative" as const,
-	width: "100%",
-	height: "80vh",
-	borderRadius: "20px",
-	overflow: "hidden",
-},
+	sliderWrapper: {
+		position: "relative" as const,
+		width: "100%",
+		height: "80vh",
+		borderRadius: "20px",
+		overflow: "hidden",
+	},
 
 	slide: {
 		position: "absolute" as const,
@@ -35,19 +35,19 @@ const styles = {
 		transition: "opacity 0.6s ease-in-out",
 	},
 
-    arrowBtn: {
-	width: "40px",
-	height: "40px",
-	borderRadius: "50%",
-	background: "rgba(59, 48, 40, 1)",
-	color: "#fff",
-	border: "none",
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
-	cursor: "pointer",
-	fontSize: "16px",
-    },
+	arrowBtn: {
+		width: "40px",
+		height: "40px",
+		borderRadius: "50%",
+		background: "rgba(59, 48, 40, 1)",
+		color: "#fff",
+		border: "none",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		cursor: "pointer",
+		fontSize: "16px",
+	},
 
 	overlay: {
 		position: "absolute" as const,
@@ -91,46 +91,50 @@ const styles = {
 		marginTop: "50px",
 	},
 
+	sectionTight: {
+		marginTop: "10px",
+	},
+
 	header: {
 		display: "flex",
 		justifyContent: "space-between",
 		alignItems: "center",
 	},
 
+	/* ОНОВЛЕНО: Тепер використовуємо сітку для жорсткого контролю відступів */
 	categories: {
-	display: "flex",
-	justifyContent: "space-between",
-	width: "100%",
-	gap: "20px",
-	marginTop: "20px",
-    },
+		display: "grid",
+		gridTemplateColumns: "repeat(6, 1fr)", /* 6 колонок */
+		width: "100%",
+		gap: "16px", /* Той самий маленький фіксований відступ між картками */
+		marginTop: "20px",
+	},
 
 	category: {
-	width: "215px",
-	height: "242px",
-	minWidth: "215px",
+		width: "100%", /* Прибрали фіксовані 215px, тепер картка заповнює колонку */
+		height: "242px",
 
-	display: "flex",
-	flexDirection: "column" as const,
-	alignItems: "center",
-	justifyContent: "center",
+		display: "flex",
+		flexDirection: "column" as const,
+		alignItems: "center",
+		justifyContent: "center",
 
-	gap: "20px",
-	padding: "26px",
+		gap: "20px",
+		padding: "26px",
 
-	borderRadius: "24px",
-	border: "1px solid #eee",
+		borderRadius: "24px",
+		border: "1px solid #eee",
 
-	cursor: "pointer",
-	background: "#fff",
-    },
+		cursor: "pointer",
+		background: "#fff",
+	},
 
 	circle: {
-	width: "130px",
-	height: "130px",
-	borderRadius: "50%",
-	background: "#ddd",
-    },
+		width: "130px",
+		height: "130px",
+		borderRadius: "50%",
+		background: "#ddd",
+	},
 
 	mapBlock: {
 		display: "flex",
@@ -168,21 +172,21 @@ const styles = {
 
 	products: {
 		display: "grid",
-		gridTemplateColumns: "repeat(4, 1fr)",
+		gridTemplateColumns: "repeat(5, 1fr)",
 		gap: "20px",
 		marginTop: "20px",
 	},
 
 	card: {
-	position: "relative" as const,
-	border: "1px solid #e5ddd5",
-	borderRadius: "24px",
-	padding: "20px",
-	background: "#fff",
-	display: "flex",
-	flexDirection: "column" as const,
-	gap: "14px",
-    },
+		position: "relative" as const,
+		border: "1px solid #e5ddd5",
+		borderRadius: "24px",
+		padding: "20px",
+		background: "#fff",
+		display: "flex",
+		flexDirection: "column" as const,
+		gap: "14px",
+	},
 
 	badge: {
 		position: "absolute" as const,
@@ -194,109 +198,109 @@ const styles = {
 	},
 
 	image: {
-	height: "220px",
-	background: "#eee",
-	borderRadius: "16px",
-    },
+		height: "220px",
+		background: "#eee",
+		borderRadius: "16px",
+	},
 
 	name: {
-	fontSize: "16px",
-	fontWeight: 500,
-	lineHeight: "1.3",
-    },
+		fontSize: "16px",
+		fontWeight: 500,
+		lineHeight: "1.3",
+	},
 
-    stock: {
-	display: "flex",
-	alignItems: "center",
-	gap: "8px",
-	fontSize: "14px",
-	color: "#3b3028",
-    },
+	stock: {
+		display: "flex",
+		alignItems: "center",
+		gap: "8px",
+		fontSize: "14px",
+		color: "#3b3028",
+	},
 
-    dotGreen: {
-	width: "8px",
-	height: "8px",
-	borderRadius: "50%",
-	background: "green",
-    },
+	dotGreen: {
+		width: "8px",
+		height: "8px",
+		borderRadius: "50%",
+		background: "green",
+	},
 
-    ratingRow: {
-	display: "flex",
-	alignItems: "center",
-	gap: "10px",
-	fontSize: "14px",
-    },
+	ratingRow: {
+		display: "flex",
+		alignItems: "center",
+		gap: "10px",
+		fontSize: "14px",
+	},
 
-    stars: {
-	color: "#f5b301",
-	letterSpacing: "2px",
-    },
+	stars: {
+		color: "#f5b301",
+		letterSpacing: "2px",
+	},
 
-    bottom: {
-	display: "flex",
-	justifyContent: "space-between",
-	alignItems: "flex-end",
-	marginTop: "10px",
-    },
+	bottom: {
+		display: "flex",
+		justifyContent: "space-between",
+		alignItems: "flex-end",
+		marginTop: "10px",
+	},
 
-    price: {
-	fontSize: "20px",
-	fontWeight: 700,
-    },
+	price: {
+		fontSize: "20px",
+		fontWeight: 700,
+	},
 
-    sub: {
-	fontSize: "12px",
-	color: "#888",
-    },
+	sub: {
+		fontSize: "12px",
+		color: "#888",
+	},
 
-    actions: {
-	display: "flex",
-	gap: "10px",
-    },
+	actions: {
+		display: "flex",
+		gap: "10px",
+	},
 
-    favBtn: {
-	width: "44px",
-	height: "44px",
-	borderRadius: "12px",
-	border: "none",
-	background: "#f3eee9",
-	cursor: "pointer",
-	fontSize: "18px",
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
-	textDecoration: "none"
-    },
+	favBtn: {
+		width: "44px",
+		height: "44px",
+		borderRadius: "12px",
+		border: "none",
+		background: "#f3eee9",
+		cursor: "pointer",
+		fontSize: "18px",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		textDecoration: "none",
+	},
 
-    cartBtn: {
-	width: "44px",
-	height: "44px",
-	borderRadius: "12px",
-	background: "#3b3028",
-	color: "#fff",
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
-	textDecoration: "none",
+	cartBtn: {
+		width: "44px",
+		height: "44px",
+		borderRadius: "12px",
+		background: "#3b3028",
+		color: "#fff",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		textDecoration: "none",
 	},
 
 	icon: {
-	width: "20px",
-	height: "20px",
+		width: "20px",
+		height: "20px",
 	},
 
 	countryImage: {
-	width: "100%",
-	height: "400px",
-	borderRadius: "24px",
-	marginTop: "20px",
+		width: "100%",
+		height: "400px",
+		borderRadius: "24px",
+		marginTop: "20px",
 	},
 
 	catalogHeader: {
-	display: "flex",
-	justifyContent: "space-between",
-	alignItems: "center",
-	marginBottom: "30px",
+		display: "flex",
+		justifyContent: "space-between",
+		alignItems: "center",
+		marginBottom: "30px",
 	},
 
 	catalogTitle: {

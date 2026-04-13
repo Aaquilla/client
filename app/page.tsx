@@ -4,7 +4,6 @@ import { useState } from "react";
 import styles from "./page.css";
 import Link from "next/link";
 import { ShoppingBasket, Heart } from "lucide-react";
-import { useEffect } from "react";
 
 export default function Home() {
 	const slides = [
@@ -56,7 +55,6 @@ export default function Home() {
 						))}
 					</div>
 
-
 					<button style={styles.arrowBtn} onClick={nextSlide}>
 						{">"}
 					</button>
@@ -82,8 +80,8 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* КРАЇНИ */}
-			<section style={styles.section}>
+			{/* КРАЇНИ (Зменшений відступ) */}
+			<section style={styles.sectionTight}>
 				<h2>Країни місяця</h2>
 
 				<div
@@ -96,8 +94,8 @@ export default function Home() {
 				/>
 			</section>
 
-			{/* КУЛІНАРІЯ */}
-			<section style={styles.section}>
+			{/* КУЛІНАРІЯ (Зменшений відступ) */}
+			<section style={styles.sectionTight}>
 			<div style={styles.header}>
 				<h2>Спробувати кулінарію світу</h2>
 				<a style={styles.link}>Переглянути всі →</a>
@@ -129,7 +127,8 @@ export default function Home() {
 					</div>
 
 					<div style={styles.products}>
-						{Array.from({ length: 4 }).map((_, i) => (
+						{/* Змінили length з 4 на 5 */}
+						{Array.from({ length: 5 }).map((_, i) => (
 							<div key={i} style={styles.card}>
 								<div style={styles.image}></div>
 
@@ -154,7 +153,7 @@ export default function Home() {
 									</div>
 
 									<div style={styles.actions}>
-										<Link href="/heart" style={styles.favBtn}>
+										<Link href="/profile/favorites" style={styles.favBtn}>
 											<Heart size={20} strokeWidth={1.5} />
 										</Link>
 										<Link href="/basket" style={styles.cartBtn}>
