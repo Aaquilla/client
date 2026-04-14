@@ -55,7 +55,7 @@ export const Center = styled.div`
   max-width: 470px;
   width: 100%;
 
-  & button {
+  button {
     position: absolute;
     top: 0;
     right: 0;
@@ -63,6 +63,12 @@ export const Center = styled.div`
     background: ${({ theme }) => theme.colors.primary};
     color: #ffffff;
     border: none;
+  }
+
+  @media (max-width: 990px) {
+    button {
+      display: none;
+    }
   }
 `;
 
@@ -73,7 +79,7 @@ export const Right = styled.div`
   gap: 25px;
   justify-self: end;
 
-  & button, a {
+  button, a {
     width: 100%;
     
     border-radius: 10px;
@@ -85,5 +91,11 @@ export const Right = styled.div`
     gap: 10px;
     
     padding: 0 15px;
+  }
+
+  @media (max-width: 990px) {
+    & .desktop {
+      display: none;
+    }
   }
 `;

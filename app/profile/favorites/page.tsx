@@ -1,51 +1,100 @@
 "use client";
 
-import { Heart } from "lucide-react";
-import { useExtracted } from "next-intl";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { Heart, ShoppingBasket } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
+import { getFavorites, removeFavorite } from "@/lib/favorites";
 import {
-	EmptyState,
-	FavoritesContainer,
-	FavoritesGrid,
+	Actions,
+	Badge,
+	Bottom,
+	CartButton,
+	Content,
+	FavoriteButton,
+	ImageWrap,
+	Info,
 	ProductCard,
 	ProductImage,
-	ProductInfo,
+	ProductName,
 	ProductPrice,
-	ProductTitle,
+	Rating,
+	Stock,
+	Sub,
 } from "./page.css";
 
 const FavoritesPage = () => {
-	const t = useExtracted("profile");
-	const favorites = [];
-	const placeholderProducts = [
-		{ id: 1, title: "Товар 1", price: "99.99" },
-		{ id: 2, title: "Товар 2", price: "149.99" },
-		{ id: 3, title: "Товар 3", price: "199.99" },
-	];
+	const query = useQueryClient();
+	const { data, isSuccess } = useQuery({
+		queryKey: ["favorites"],
+		queryFn: async () => await getFavorites(),
+		staleTime: 3 * 60 * 1000,
+	});
+	const { mutate } = useMutation({
+		mutationKey: ["favorites"],
+		mutationFn: async (id: number) => await removeFavorite(id),
+		onSuccess: () => query.invalidateQueries({ queryKey: ["favorites"] }),
+	});
 
 	return (
-		<FavoritesContainer>
-			{favorites.length > 0 ? (
-				<FavoritesGrid></FavoritesGrid>
-			) : (
-				<>
-					<FavoritesGrid>
-						{placeholderProducts.map((product) => (
-							<ProductCard key={product.id}>
-								<ProductImage>
-									<Heart size={48} />
-								</ProductImage>
-								<ProductInfo>
-									<ProductTitle>{product.title}</ProductTitle>
-									<ProductPrice>{product.price} грн</ProductPrice>
-								</ProductInfo>
-							</ProductCard>
-						))}
-					</FavoritesGrid>
-					<EmptyState>{t("No favorites yet")}</EmptyState>
-				</>
-			)}
-		</FavoritesContainer>
+		<Content>
+			{isSuccess &&
+				data.map(({ product }) => (
+					<ProductCard key={product.id}>
+						<Badge>- 15%</Badge>
+
+						<ImageWrap>
+							<ProductImage>
+								<Image
+									src={
+										product.picture
+											? `${process.env.NEXT_PUBLIC_FILES_URL}/products/${product.id}/large/${product.picture}.webp`
+											: "/logo.png"
+									}
+									alt={product.name}
+									fill
+									loading="eager"
+									unoptimized
+								/>
+							</ProductImage>
+						</ImageWrap>
+
+						<ProductName>{product.name}</ProductName>
+
+						<Stock>
+							<span />
+							{product.inStock ? "є в наявності" : "немає в наявності"}
+						</Stock>
+
+						<Rating>
+							<u>★★★★★</u>
+							<span>{product.rating}</span>
+						</Rating>
+
+						<Bottom>
+							<Info>
+								<ProductPrice>{product.price} грн</ProductPrice>
+								<Sub>{product.weight} мл / 100 г</Sub>
+							</Info>
+
+							<Actions>
+								<FavoriteButton
+									type="button"
+									aria-label="Видалити з вибраного"
+									onClick={() => mutate(product.id)}
+								>
+									<Heart size={26} strokeWidth={1.5} fill="#e53935" />
+								</FavoriteButton>
+
+								<CartButton as={Link} href="/basket" aria-label="Додати у кошик">
+									<ShoppingBasket size={20} strokeWidth={1.5} />
+								</CartButton>
+							</Actions>
+						</Bottom>
+					</ProductCard>
+				))}
+		</Content>
 	);
 };
 

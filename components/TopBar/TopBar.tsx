@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp, CircleUserRound, LayoutGrid, ShoppingBasket } f
 import { useExtracted, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { setLocaleCookie } from "@/app/actions";
 import { type Locale, locales, localesDisplay } from "@/i18n";
@@ -19,6 +19,8 @@ const TopBar = () => {
 	const [selected, setSelected] = useState<Locale>(locale);
 	const [localeActive, setLocaleActive] = useState<boolean>(false);
 
+	const ref = useRef<HTMLUListElement>(null);
+
 	const onChange = async (locale: Locale) => {
 		setLocaleActive(false);
 		setSelected(locale);
@@ -26,6 +28,21 @@ const TopBar = () => {
 	};
 
 	const { catalog, setCatalog } = useModals();
+
+	useEffect(() => {
+		const onClickOutside = (e: MouseEvent) => {
+			if (!ref.current || ref.current.contains(e.target as Node)) return;
+
+			const target = e.target as Element | null;
+			if (target?.closest("[data-catalog-toggle='true']")) return;
+
+			setLocaleActive(false);
+		};
+
+		document.addEventListener("click", onClickOutside);
+
+		return () => document.removeEventListener("click", onClickOutside);
+	}, []);
 
 	return (
 		<Content>
@@ -47,12 +64,14 @@ const TopBar = () => {
 					<Link href="/basket" aria-label={t("Basket")} prefetch={false}>
 						<ShoppingBasket size={25} strokeWidth={1} absoluteStrokeWidth />
 					</Link>
-					<Link href="/profile" aria-label={t("Profile")} prefetch={false}>
+					<Link href="/profile" className="desktop" aria-label={t("Profile")} prefetch={false}>
 						<CircleUserRound size={25} strokeWidth={1} absoluteStrokeWidth />
 					</Link>
 					<button
 						type="button"
+						className="desktop"
 						aria-label={t("Change locale")}
+						data-catalog-toggle="true"
 						onClick={() => setLocaleActive(!localeActive)}
 					>
 						{localesDisplay[selected][0]}
@@ -62,7 +81,7 @@ const TopBar = () => {
 							<ChevronDown size={20} strokeWidth={1} absoluteStrokeWidth />
 						)}
 					</button>
-					<LocaleSelector $active={localeActive}>
+					<LocaleSelector $active={localeActive} ref={ref} className="desktop">
 						{locales.map((l) => (
 							<li key={l}>
 								<button type="button" onClick={() => onChange(l)}>
