@@ -3,6 +3,7 @@
 import { Check, Eye, Minus, Plus, X } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation"; // Додано імпорт роутера
 
 import {
 	AlertIcon,
@@ -79,6 +80,7 @@ const formatPrice = (price: number): string => {
 };
 
 export default function BasketPage() {
+	const router = useRouter(); // Ініціалізація роутера
 	const [items, setItems] = useState<ICartItem[]>(MOCK_ITEMS);
 	const [miles, setMiles] = useState<number>(5);
 	const [promoApplied, setPromoApplied] = useState<boolean>(false);
@@ -252,7 +254,8 @@ export default function BasketPage() {
 					<span>Загалом:</span>
 					<span>{formatPrice(finalTotal)} грн</span>
 				</TotalRow>
-				<CheckoutButton>Оформити замовлення</CheckoutButton>
+				{/* Додано onClick для переходу на /order */}
+				<CheckoutButton onClick={() => router.push("/basket/placeorder")}>Оформити замовлення</CheckoutButton>
 			</SummaryBlock>
 
 			<SummaryBlock>

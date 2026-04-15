@@ -1,161 +1,158 @@
 import styled from "styled-components";
 
 export const PageWrapper = styled.main`
-  min-height: 100vh;
-  background: #f3f5f8;
-  padding: 28px 16px 36px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Montserrat Alternates", sans-serif;
 `;
 
 export const ContentWrapper = styled.div`
-  max-width: 900px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
 `;
 
-export const PageTitle = styled.h1`
-  margin: 0;
-  font-size: 28px;
-  font-weight: 700;
-  color: #111827;
-`;
-
 export const OrderCard = styled.article`
   background: #ffffff;
-  border: 1px solid #d9d8d3;
-  border-radius: 26px;
+  border: 1px solid #e9e3d9;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s ease;
 `;
 
-export const OrderTop = styled.button`
-  width: 100%;
-  border: none;
-  background: transparent;
-  padding: 24px 26px;
+export const OrderTop = styled.div`
+  padding: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   cursor: pointer;
-  text-align: left;
-
-  &:hover {
-    background: #f8f8f6;
-  }
+  background: #fff;
 `;
 
 export const OrderHeader = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 `;
 
 export const OrderNumber = styled.div`
-  font-size: 18px;
-  font-weight: 700;
-  color: #111827;
+  font-family: "Gabriela", serif;
+  font-size: 28px;
+  color: #3b3028;
 `;
 
 export const OrderDate = styled.div`
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
 `;
 
-export const CollapseIcon = styled.span`
-  font-size: 18px;
-  color: #6b7280;
-  line-height: 1;
-  margin-top: 4px;
+export const CollapseIcon = styled.div`
+  color: #3b3028;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-interface DetailsPanelProps {
-  open: boolean;
-}
-export const DetailsPanel = styled.div<DetailsPanelProps>`
-  overflow: hidden;
-  max-height: ${({ open }) => (open ? "1400px" : "0")};
-  transition: max-height 0.35s ease, padding 0.35s ease;
-  border-top: 1px solid #ebe6dd;
-  padding: ${({ open }) => (open ? "24px 26px 28px" : "0 26px")};
+export const DetailsPanel = styled.div<{ $open: boolean }>`
+  display: ${({ $open }) => ($open ? "block" : "none")};
+  padding: 0 30px 30px 30px;
 `;
 
+/* ===== ТАЙМЛАЙН ===== */
 export const Timeline = styled.div`
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 14px;
-  padding: 18px 0 28px;
+  margin-bottom: 40px;
+  padding: 0 10px;
 `;
 
-export const TimelineLine = styled.span`
+/* Контейнер для линии, чтобы она шла ровно от центра первого до центра последнего круга */
+export const TimelineTrack = styled.div`
   position: absolute;
-  left: 24px;
-  right: 24px;
-  top: 50%;
+  top: 24px;
+  left: 60px; /* Ровно центр первого шага (10px padding + 50px половина ширины) */
+  right: 60px; /* Ровно центр последнего шага */
   transform: translateY(-50%);
-  height: 2px;
-  background: #ebe6dd;
+  height: 6px;
+  background: #f3f0ec;
+  border-radius: 4px;
+  z-index: 1;
 `;
 
-interface TimelineStepProps {
-  active?: boolean;
-}
-export const TimelineStep = styled.div<TimelineStepProps>`
-  position: relative;
-  z-index: 1;
+export const TimelineActiveLine = styled.div<{ $progress: number }>`
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #3b3028;
+  border-radius: 4px;
+  z-index: 2;
+  width: ${({ $progress }) => $progress}%; /* Точно по процентам, без лишних прибавок */
+  transition: width 0.3s ease;
+`;
+
+export const TimelineStep = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 80px;
+  gap: 12px;
+  z-index: 3;
+  width: 100px;
+  position: relative;
 `;
 
-export const TimelineCircle = styled.span<TimelineStepProps>`
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
+export const TimelineCircle = styled.div<{ $state: "completed" | "active" | "pending" }>`
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  font-size: 13px;
-  font-weight: 700;
-  color: ${({ active }) => (active ? "#ffffff" : "#6b7280")};
-  background: ${({ active }) => (active ? "#2c1f12" : "#ffffff")};
-  border: 1px solid ${({ active }) => (active ? "#2c1f12" : "#d9d8d3")};
+  font-size: 16px;
+  font-weight: 600;
+  
+  /* Белый фон перекрывает спрятанную под ним линию */
+  background: ${({ $state }) => ($state === "pending" ? "#fff" : "#3b3028")};
+  color: ${({ $state }) => ($state === "pending" ? "#3b3028" : "#fff")};
+  
+  border: ${({ $state }) => ($state === "pending" ? "1px dashed #888" : "none")};
+  
+  transition: all 0.3s ease;
 `;
 
-export const TimelineLabel = styled.span<TimelineStepProps>`
-  margin-top: 10px;
-  font-size: 12px;
-  color: ${({ active }) => (active ? "#111827" : "#6b7280")};
+export const TimelineLabel = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: #3b3028;
+  text-align: center;
 `;
 
-export const ProductList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* ===== СПИСОК ТОВАРОВ ===== */
+export const ProductList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const ProductRow = styled.div`
+  position: relative;
   display: grid;
-  gap: 14px;
-`;
-
-export const ProductRow = styled.li`
-  display: grid;
-  grid-template-columns: 110px 1fr auto;
-  gap: 18px;
+  grid-template-columns: 100px 1fr auto;
+  gap: 24px;
   align-items: center;
-  padding: 18px 18px 18px 16px;
-  border-radius: 18px;
-  border: 1px solid #ece5dd;
-  background: #ffffff;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid #e9e3d9;
 `;
 
 export const ProductImage = styled.img`
-  width: 110px;
-  height: 110px;
-  border-radius: 18px;
-  object-fit: cover;
-  background: #f3f4f6;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 `;
 
 export const ProductInfo = styled.div`
@@ -165,30 +162,45 @@ export const ProductInfo = styled.div`
 `;
 
 export const ProductName = styled.div`
-  font-size: 15px;
-  font-weight: 700;
-  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3b3028;
+  line-height: 1.4;
 `;
 
 export const ProductMeta = styled.div`
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 14px;
+  color: #888;
+`;
+
+export const ProductPriceBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
 `;
 
 export const ProductPrice = styled.div`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
-  color: #111827;
-  text-align: right;
+  color: #3b3028;
 `;
 
-export const ProductBadge = styled.span`
-  display: inline-flex;
-  margin-bottom: 10px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: #ef4444;
-  color: #ffffff;
+export const ProductQty = styled.div`
+  font-size: 14px;
+  color: #888;
+`;
+
+/* БЕЙДЖ СКИДКИ (-15%) */
+export const ProductBadge = styled.div`
+  position: absolute;
+  top: 24px;
+  left: -1px;
+  background: #e93a36;
+  color: #fff;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 0 8px 8px 0;
+  z-index: 10;
 `;

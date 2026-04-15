@@ -1,33 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import {
-  PageWrapper,
-  ContentWrapper,
-  PageTitle,
-  OrderCard,
-  OrderTop,
-  OrderHeader,
-  OrderNumber,
-  OrderDate,
-  CollapseIcon,
-  DetailsPanel,
-  Timeline,
-  TimelineLine,
-  TimelineStep,
-  TimelineCircle,
-  TimelineLabel,
-  ProductList,
-  ProductRow,
-  ProductImage,
-  ProductInfo,
-  ProductName,
-  ProductMeta,
-  ProductPrice,
-  ProductBadge,
-} from "./page.css";
+import { ChevronDown, ChevronUp, Check } from "lucide-react";
+import * as S from "./page.css";
 
-type OrderStatus = "Створено" | "Підтверджено" | "Відправлено" | "Доставлено";
+type OrderStatus = "Обробка" | "Комплектація" | "Відправлено" | "Доставлено";
 
 interface Product {
   id: string;
@@ -43,32 +20,32 @@ interface Order {
   id: string;
   date: string;
   status: OrderStatus;
-  statusLabel?: string;
   products: Product[];
 }
+
+const statusSteps: OrderStatus[] = ["Обробка", "Комплектація", "Відправлено", "Доставлено"];
 
 const orders: Order[] = [
   {
     id: "109283763",
     date: "04.12.2025",
-    status: "Відправлено",
-    statusLabel: "Комплектація",
+    status: "Комплектація", 
     products: [
       {
         id: "P-001",
         name: "Печиво Konti Super Kontik з молочно-ванільним смаком",
         code: "36732213",
-        price: "29.19 ₴",
+        price: "29.19 грн",
         qty: "x2 шт.",
-        image: "https://via.placeholder.com/100x100",
+        image: "/product/kontik.png", 
       },
       {
         id: "P-002",
         name: "Напій Dr.Pepper Regular безалкогольний газований",
         code: "35930019",
-        price: "59.99 ₴",
+        price: "59.99 грн",
         qty: "x2 шт.",
-        image: "https://via.placeholder.com/100x100",
+        image: "/product/pepper.png", 
         badge: "-15%",
       },
     ],
@@ -77,21 +54,18 @@ const orders: Order[] = [
     id: "109283764",
     date: "01.12.2025",
     status: "Доставлено",
-    statusLabel: "Доставлено",
     products: [
       {
         id: "P-003",
         name: "Набір канцелярії Hermes",
         code: "STN-05",
-        price: "2 490 ₴",
+        price: "2 490 грн",
         qty: "x1 шт.",
         image: "https://via.placeholder.com/100x100",
       },
     ],
   },
 ];
-
-const statusSteps: OrderStatus[] = ["Створено", "Підтверджено", "Відправлено", "Доставлено"];
 
 export default function OrderHistoryPage() {
   const [openOrderIds, setOpenOrderIds] = useState<string[]>(["109283763"]);
@@ -103,62 +77,80 @@ export default function OrderHistoryPage() {
   };
 
   return (
-    <PageWrapper>
-      <ContentWrapper>
-        <PageTitle>Історія замовлень</PageTitle>
-
+    <S.PageWrapper>
+      <S.ContentWrapper>
         {orders.map((order) => {
           const isOpen = openOrderIds.includes(order.id);
           const activeStepIndex = statusSteps.indexOf(order.status);
+          
+          const progressPercentage = (activeStepIndex / (statusSteps.length - 1)) * 100;
 
           return (
-            <OrderCard key={order.id}>
-              <OrderTop onClick={() => toggleOrder(order.id)}>
-                <OrderHeader>
-                  <div>
-                    <OrderNumber>Замовлення №{order.id}</OrderNumber>
-                    <OrderDate>Дата замовлення: {order.date}</OrderDate>
-                  </div>
-                </OrderHeader>
+            <S.OrderCard key={order.id}>
+              <S.OrderTop onClick={() => toggleOrder(order.id)}>
+                <S.OrderHeader>
+                  <S.OrderNumber>Замовлення №{order.id}</S.OrderNumber>
+                  <S.OrderDate>Дата замовлення: {order.date}</S.OrderDate>
+                </S.OrderHeader>
 
-                <CollapseIcon>{isOpen ? "▲" : "▼"}</CollapseIcon>
-              </OrderTop>
+                <S.CollapseIcon>
+                  {isOpen ? <ChevronUp size={28} strokeWidth={1.5} /> : <ChevronDown size={28} strokeWidth={1.5} />}
+                </S.CollapseIcon>
+              </S.OrderTop>
 
-              <DetailsPanel open={isOpen}>
-                <Timeline>
-                  <TimelineLine />
+              <S.DetailsPanel $open={isOpen}>
+                <S.Timeline>
+                  {/* Трек для прогресс-бара */}
+                  <S.TimelineTrack>
+                    <S.TimelineActiveLine $progress={progressPercentage} />
+                  </S.TimelineTrack>
+                  
                   {statusSteps.map((step, index) => {
-                    const active = index <= activeStepIndex;
+                    const isCompleted = index < activeStepIndex;
+                    const isActive = index === activeStepIndex;
+                    const isPending = index > activeStepIndex;
+
+                    let state: "completed" | "active" | "pending" = "pending";
+                    if (isCompleted) state = "completed";
+                    if (isActive) state = "active";
+
+                    const stepNumber = `0${index + 1}`;
+
                     return (
-                      <TimelineStep key={step}>
-                        <TimelineCircle active={active}>{index + 1}</TimelineCircle>
-                        <TimelineLabel active={active}>{step}</TimelineLabel>
-                      </TimelineStep>
+                      <S.TimelineStep key={step}>
+                        <S.TimelineCircle $state={state}>
+                          {isCompleted ? <Check size={20} strokeWidth={2} /> : stepNumber}
+                        </S.TimelineCircle>
+                        <S.TimelineLabel>{step}</S.TimelineLabel>
+                      </S.TimelineStep>
                     );
                   })}
-                </Timeline>
+                </S.Timeline>
 
-                <ProductList>
+                <S.ProductList>
                   {order.products.map((product) => (
-                    <ProductRow key={product.id}>
-                      <ProductImage src={product.image} alt={product.name} />
-                      <ProductInfo>
-                        <ProductName>{product.name}</ProductName>
-                        <ProductMeta>код: {product.code}</ProductMeta>
-                        {product.qty && <ProductMeta>{product.qty}</ProductMeta>}
-                      </ProductInfo>
-                      <div>
-                        {product.badge && <ProductBadge>{product.badge}</ProductBadge>}
-                        <ProductPrice>{product.price}</ProductPrice>
-                      </div>
-                    </ProductRow>
+                    <S.ProductRow key={product.id}>
+                      {product.badge && <S.ProductBadge>{product.badge}</S.ProductBadge>}
+                      
+                      <S.ProductImage src={product.image} alt={product.name} />
+                      
+                      <S.ProductInfo>
+                        <S.ProductName>{product.name}</S.ProductName>
+                        <S.ProductMeta>код: {product.code}</S.ProductMeta>
+                      </S.ProductInfo>
+                      
+                      <S.ProductPriceBlock>
+                        <S.ProductPrice>{product.price}</S.ProductPrice>
+                        {product.qty && <S.ProductQty>{product.qty}</S.ProductQty>}
+                      </S.ProductPriceBlock>
+                    </S.ProductRow>
                   ))}
-                </ProductList>
-              </DetailsPanel>
-            </OrderCard>
+                </S.ProductList>
+              </S.DetailsPanel>
+            </S.OrderCard>
           );
         })}
-      </ContentWrapper>
-    </PageWrapper>
+      </S.ContentWrapper>
+    </S.PageWrapper>
   );
 }
