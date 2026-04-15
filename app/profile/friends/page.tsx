@@ -1,19 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
-import { useExtracted } from "next-intl";
+import { useQuery } from "@tanstack/react-query";
 import { X } from "lucide-react";
+import { useExtracted } from "next-intl";
+import Image from "next/image";
+import React, { useState } from "react";
 
-import FriendsList from "@/components/FriendsList/FriendsList";
-import { 
-	Content, Header, HeaderInfo, InviteButton,
-	ModalOverlay, ModalBox, ModalClose, ModalTitle, 
-	LinkContainer, LinkInput, CopyButton 
+import { getReferrals } from "@/lib/referrals";
+import {
+	Content,
+	CopyButton,
+	Header,
+	HeaderInfo,
+	InviteButton,
+	Item,
+	Items,
+	LinkContainer,
+	LinkInput,
+	ModalBox,
+	ModalClose,
+	ModalOverlay,
+	ModalTitle,
 } from "./page.css";
 
 const FriendsPage = () => {
-	// Используем контекст "profile", как в остальных частях личного кабинета
 	const t = useExtracted("profile");
+
+	const { data, isSuccess } = useQuery({
+		queryKey: ["friends"],
+		queryFn: async () => await getReferrals(),
+		staleTime: 3 * 60 * 1000,
+	});
 
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [isCopied, setIsCopied] = useState(false);
@@ -43,14 +60,31 @@ const FriendsPage = () => {
 						)}
 					</div>
 				</HeaderInfo>
-				
+
 				<InviteButton onClick={() => setIsModalOpen(true)} type="button">
 					{/* Текст кнопки "Запросити" */}
 					{t("Invite")}
 				</InviteButton>
 			</Header>
 
-			<FriendsList />
+			<Items>
+				{isSuccess &&
+					data.map((r) => (
+						<Item key={r.id}>
+							<div className="image">
+								<Image
+									src={r.picture ? `${process.env.NEXT_PUBLIC_FILES_URL}/${r.picture}` : "/logo.png"}
+									width={34}
+									height={34}
+									alt=""
+									unoptimized={true}
+								/>
+							</div>
+							<div>{r.full_name}</div>
+							<div className="status">{t("Waiting for the first purchase")}</div>
+						</Item>
+					))}
+			</Items>
 
 			{isModalOpen && (
 				<ModalOverlay onClick={handleOverlayClick}>
@@ -63,11 +97,7 @@ const FriendsPage = () => {
 						<ModalTitle>{t("Invitation link")}</ModalTitle>
 
 						<LinkContainer>
-							<LinkInput 
-								type="text" 
-								value={referralLink} 
-								readOnly 
-							/>
+							<LinkInput type="text" value={referralLink} readOnly />
 							<CopyButton onClick={handleCopy} type="button">
 								{/* Динамический текст кнопки копирования */}
 								{isCopied ? t("Copied") : t("Copy")}

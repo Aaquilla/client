@@ -71,32 +71,37 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Open countries map"
 
-#: app/profile/friends/page.tsx:39
+#: app/profile/friends/page.tsx:46
 msgctxt "profile"
 msgid "3s0ZWy"
 msgstr "Invite friends and get bonuses!"
 
-#: app/profile/friends/page.tsx:41
+#: app/profile/friends/page.tsx:48
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Get +50 miles and coffee after your friend makes their first purchase for an amount of 150 UAH or more."
 
-#: app/profile/friends/page.tsx:49
+#: app/profile/friends/page.tsx:56
 msgctxt "profile"
 msgid "hYOE+U"
 msgstr "Invite"
 
-#: app/profile/friends/page.tsx:63
+#: app/profile/friends/page.tsx:74
+msgctxt "profile"
+msgid "smWqVf"
+msgstr "Waiting for the first purchase"
+
+#: app/profile/friends/page.tsx:87
 msgctxt "profile"
 msgid "G8P44K"
 msgstr "Invitation link"
 
-#: app/profile/friends/page.tsx:73
+#: app/profile/friends/page.tsx:93
 msgctxt "profile"
 msgid "p556q3"
 msgstr "Copied"
 
-#: app/profile/friends/page.tsx:73
+#: app/profile/friends/page.tsx:93
 msgctxt "profile"
 msgid "4l6vz1"
 msgstr "Copy"
@@ -216,11 +221,6 @@ msgctxt "profile"
 msgid "xfP1jk"
 msgstr "List of bonuses for status"
 
-#: components/FriendsList/FriendsList.tsx:34
-msgctxt "profile"
-msgid "smWqVf"
-msgstr "Waiting for the first purchase"
-
 #: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"
 msgid "itPgxd"
@@ -286,37 +286,37 @@ msgctxt "profile"
 msgid "jvo0vs"
 msgstr "Save"
 
-#: components/TopBar/TopBar.tsx:53
+#: components/TopBar/TopBar.tsx:51
 msgctxt "navigation"
 msgid "Dxd1uB"
 msgstr "Shop"
 
-#: components/TopBar/TopBar.tsx:58
+#: components/TopBar/TopBar.tsx:56
 msgctxt "navigation"
 msgid "GOdq5V"
 msgstr "Catalog"
 
-#: components/TopBar/TopBar.tsx:62
+#: components/TopBar/TopBar.tsx:60
 msgctxt "navigation"
 msgid "6bSS05"
 msgstr "Find your treasure..."
 
-#: components/TopBar/TopBar.tsx:63
+#: components/TopBar/TopBar.tsx:61
 msgctxt "navigation"
 msgid "xmcVZ0"
 msgstr "Search"
 
-#: components/TopBar/TopBar.tsx:66
+#: components/TopBar/TopBar.tsx:64
 msgctxt "navigation"
 msgid "18aFPn"
 msgstr "Basket"
 
-#: components/TopBar/TopBar.tsx:70
+#: components/TopBar/TopBar.tsx:67
 msgctxt "navigation"
 msgid "itPgxd"
 msgstr "Profile"
 
-#: components/TopBar/TopBar.tsx:75
+#: components/TopBar/TopBar.tsx:73
 msgctxt "navigation"
 msgid "brizuL"
 msgstr "Change locale"

@@ -71,32 +71,37 @@ msgctxt "profile"
 msgid "VdXF7G"
 msgstr "Мапа відкритих країн"
 
-#: app/profile/friends/page.tsx:39
+#: app/profile/friends/page.tsx:46
 msgctxt "profile"
 msgid "3s0ZWy"
 msgstr "Запросіть друзів та отримайте бонуси!"
 
-#: app/profile/friends/page.tsx:41
+#: app/profile/friends/page.tsx:48
 msgctxt "profile"
 msgid "CsMutJ"
 msgstr "Отримайте +50 миль і каву після того, як ваш друг зробить першу покупку на суму від 150 грн."
 
-#: app/profile/friends/page.tsx:49
+#: app/profile/friends/page.tsx:56
 msgctxt "profile"
 msgid "hYOE+U"
 msgstr "Запросити"
 
-#: app/profile/friends/page.tsx:63
+#: app/profile/friends/page.tsx:74
+msgctxt "profile"
+msgid "smWqVf"
+msgstr "Очікує першу покупку"
+
+#: app/profile/friends/page.tsx:87
 msgctxt "profile"
 msgid "G8P44K"
 msgstr "Запрошувальне посилання"
 
-#: app/profile/friends/page.tsx:73
+#: app/profile/friends/page.tsx:93
 msgctxt "profile"
 msgid "p556q3"
 msgstr "Скопійовано"
 
-#: app/profile/friends/page.tsx:73
+#: app/profile/friends/page.tsx:93
 msgctxt "profile"
 msgid "4l6vz1"
 msgstr "Копіювати"
@@ -216,11 +221,6 @@ msgctxt "profile"
 msgid "xfP1jk"
 msgstr "Список бонусів статусу"
 
-#: components/FriendsList/FriendsList.tsx:34
-msgctxt "profile"
-msgid "smWqVf"
-msgstr "Очікує першу покупку"
-
 #: components/ProfileBar/ProfileBar.tsx:15
 msgctxt "profile"
 msgid "itPgxd"
@@ -286,37 +286,37 @@ msgctxt "profile"
 msgid "jvo0vs"
 msgstr "Зберегти"
 
-#: components/TopBar/TopBar.tsx:53
+#: components/TopBar/TopBar.tsx:51
 msgctxt "navigation"
 msgid "Dxd1uB"
 msgstr "Магазин"
 
-#: components/TopBar/TopBar.tsx:58
+#: components/TopBar/TopBar.tsx:56
 msgctxt "navigation"
 msgid "GOdq5V"
 msgstr "Каталог"
 
-#: components/TopBar/TopBar.tsx:62
+#: components/TopBar/TopBar.tsx:60
 msgctxt "navigation"
 msgid "6bSS05"
 msgstr "Знайти свій скарб..."
 
-#: components/TopBar/TopBar.tsx:63
+#: components/TopBar/TopBar.tsx:61
 msgctxt "navigation"
 msgid "xmcVZ0"
 msgstr "Пошук"
 
-#: components/TopBar/TopBar.tsx:66
+#: components/TopBar/TopBar.tsx:64
 msgctxt "navigation"
 msgid "18aFPn"
 msgstr "Корзина"
 
-#: components/TopBar/TopBar.tsx:70
+#: components/TopBar/TopBar.tsx:67
 msgctxt "navigation"
 msgid "itPgxd"
 msgstr "Профіль"
 
-#: components/TopBar/TopBar.tsx:75
+#: components/TopBar/TopBar.tsx:73
 msgctxt "navigation"
 msgid "brizuL"
 msgstr "Змінити мову"
