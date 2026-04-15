@@ -1,4 +1,4 @@
-import z from "zod";
+import { z } from "zod";
 
 import { Category } from "./categories";
 import { Country } from "./countries";
@@ -17,3 +17,5 @@ export const Product = z.object({
 	country: Country.nullable(),
 	category: Category.nullable(),
 });
+
+export type ProductType = z.infer<typeof Product>;
